@@ -1,0 +1,21 @@
+\taskpic{Для покоящейся системы, изображенной на рисунке, найдите
+  ускорения всех грузов сразу после того, как была перерезана
+  удерживающая их нижняя нить. Считать, что нити невесомы и
+  нерастяжимы, пружины невесомы, масса блока пренебрежимо мала, трение
+  в подвесе отсутствует.}{
+\begin{tikzpicture}
+  \draw[interface,thick] (1,3.5) -- ++(2,0);
+  \draw (2,3.5) -- ++(0,-1);
+  \draw[very thick] (2,2.5) circle (0.5);
+  \draw[thick] (1.5,2.5) -- ++(0,-0.75);
+  \draw[thick] (2.5,2.5) -- ++(0,-0.75);
+  \draw[thick] (1.25,1.75) rectangle +(0.5,-0.25) node[left=4,midway] {$m_1$};
+  \draw[thick] (2.25,1.75) rectangle +(0.5,-0.25) node[right=5,midway] {$m_3$};
+  \draw[spring] (1.5,1.5) -- ++(0,-0.5) node [midway,left] {$k$};
+  \draw[spring] (2.5,1.5) -- ++(0,-0.5) node [midway,right] {$k$};
+  \draw[thick] (1.25,1) rectangle +(0.5,-0.25) node[left=4,midway] {$m_2$};
+  \draw[thick] (2.25,1) rectangle +(0.5,-0.25) node[right=5,midway] {$m_4$};
+  \draw (2.5,0.75) -- +(0,-0.5);
+  \draw[interface,thick] (3,0.25) -- ++(-0.9,0);
+\end{tikzpicture}
+}
