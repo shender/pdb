@@ -1,0 +1,15 @@
+#!/bin/bash
+# search problems by tags
+# (mb) here should be also a list of possible tags
+
+com="cat pdb"
+tags=("$@")
+for index in $(seq 0 $((${#tags[@]}-1)))
+do
+    com=${com}" | grep "${tags[$index]}
+done
+com=${com}" | cut -f 1 -d ' '"
+tasks=$(eval "$com")
+ntasks=$(echo "$tasks" | wc -l)
+echo "Найдено задач: $ntasks"
+echo -e "Номера подходящих задач:\n$tasks"
