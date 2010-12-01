@@ -2,14 +2,46 @@
 # search problems by tags
 # (mb) here should be also a list of possible tags
 
+# function for creating preliminary pdf
+pdb-pdf-create () {
+    FILE=sel_tags
+    
+    id=("$@")
+    rm $FILE.tex
+    touch $FILE.tex 
+    cat "header.tex" >> $FILE.tex 
+    
+    for index in $(seq 0 $((${#id[@]}-1)))
+    do
+	echo "\setcounter{notask}{${id[$index]}}" >> $FILE.tex
+	cat "problems/${id[$index]}.tex" >> $FILE.tex
+	echo -e "\n" >> $FILE.tex
+    done
+    
+    echo "\end{document}" >> $FILE.tex
+    latexmk -pdf -pv -silent $FILE.tex 
+}
+
+# beginning of search command
 com="cat pdb"
+
+# all tags from the input go to the array
 tags=("$@")
+
+# composing the search command
 for index in $(seq 0 $((${#tags[@]}-1)))
 do
     com=${com}" | grep "${tags[$index]}
 done
+
+# to get only id
 com=${com}" | cut -f 1 -d ' '"
+
+# searching
 tasks=$(eval "$com")
+
 ntasks=$(echo "$tasks" | wc -l)
 echo "Найдено задач: $ntasks"
 echo -e "Номера подходящих задач:\n$tasks"
+
+pdb-pdf-create $tasks

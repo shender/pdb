@@ -8,4 +8,9 @@ for index in $(seq 0 $((${#id[@]}-1)))
 do
     cat "problems/${id[$index]}.tex" >> $FILE.tex
     echo -e "\n" >> $FILE.tex
+    echo "Добавлена задача № ${id[$index]}"
 done
+
+n=$(grep task sel_id.tex | wc -l)
+n=$(($n-12))
+echo "Всего отобрано задач: $n"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm sel_tags*
 latexmk -c sel_id.tex
 rm sel_id.tex
+rm *.synctex.gz
 cat "header.tex" > sel_id.tex

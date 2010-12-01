@@ -2,9 +2,7 @@
 # adds header and footer to the
 # file with selected problems
 
-VIEWER=evince
 FILE=sel_id
 
 echo "\end{document}" >> $FILE.tex
-pdflatex $FILE.tex
-$VIEWER $FILE.pdf &
+latexmk -pdf -pv -silent $FILE.tex
