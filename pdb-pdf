@@ -1,0 +1,21 @@
+#!/bin/bash
+# makes *.tex file with selected problems
+# produces pdf and shows it with VIEWER
+
+VIEWER=evince
+FILE=sel_tags
+
+id=("$@")
+rm $FILE.tex
+touch $FILE.tex 
+cat "header.tex" >> $FILE.tex 
+
+for index in $(seq 0 $((${#id[@]}-1)))
+do
+    cat "problems/${id[$index]}.tex" >> $FILE.tex
+    echo -e "\n" >> $FILE.tex
+done
+
+echo "\end{document}" >> $FILE.tex
+pdflatex $FILE.tex
+$VIEWER $FILE.pdf &

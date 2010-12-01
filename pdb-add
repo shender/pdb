@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FILE=sel_id
+
+id=("$@")
+
+for index in $(seq 0 $((${#id[@]}-1)))
+do
+    cat "problems/${id[$index]}.tex" >> $FILE.tex
+    echo -e "\n" >> $FILE.tex
+done

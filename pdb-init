@@ -1,0 +1,5 @@
+#!/bin/bash
+
+latexmk -c sel_id.tex
+rm sel_id.tex
+cat "header.tex" > sel_id.tex

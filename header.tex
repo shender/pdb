@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage[margin=2cm]{geometry}
+\usepackage{calc}
+\usepackage{wrapfig}
+
+\usepackage{cmlgc}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[unicode]{hyperref}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{subfig}
+\usepackage{pgfplots,tikz,circuitikz}
+\usetikzlibrary{%
+  arrows,%
+  calc,%
+  patterns,%
+  decorations.pathreplacing,%
+  decorations.pathmorphing,%
+  decorations.markings%
+}
+\tikzset{>=latex}
+
+% colors of the hyperlinks
+\hypersetup{colorlinks,%
+  citecolor=blue,%
+  urlcolor=blue,%
+  linkcolor=red
+}
+
+\tolerance=1000
+\emergencystretch=0.74cm
+
+\newcommand{\nn}{\nonumber}
+\newcommand{\pt}{\partial}
+\newcommand{\eps}{\epsilon}
+\newcommand{\vareps}{\varepsilon}
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\com}[1]{{\Large{\texttt{{\color{red}(#1)}}}}}
+
+% счётчик задач
+\newcounter{notask}
+\setcounter{notask}{1}
+
+% условие без картинки
+\newcommand{\task}[1]{
+  \hrule
+  \hbox to \textwidth {%
+    \vrule
+    \parbox[t]{0.04\textwidth}{\smallskip \centering \arabic{notask}}%
+    \vrule%
+    \hfill%
+    \parbox[t]{0.93\textwidth}{\smallskip #1 \smallskip}\hfill%
+    \vrule
+  }
+  \hrule
+  \addtocounter{notask}{1}
+  \pagebreak[2]
+}
+
+\newlength{\h}
+\newsavebox{\taskbox}
+\newlength{\x}
+\newsavebox{\pictbox}
+
+% условие с картинкой (картинка выравнивается по центру)
+\newcommand{\taskpic}[2]{
+  \savebox{\taskbox}{\parbox[t]{0.93\textwidth-4.3cm}{\smallskip #1 \smallskip}}
+  \savebox{\pictbox}{\parbox[t]{4cm}{\smallskip \centering
+      \vspace{0pt} #2 \smallskip}}
+  \h=\ht\taskbox
+  \advance\h\dp\taskbox
+  \x=\ht\pictbox
+  \advance\x\dp\pictbox
+  \hrule
+  \hbox to \textwidth {%
+    \vrule\parbox[t][\maxof{\h}{\x}][t]{0.04\textwidth}{ \smallskip
+      \centering \arabic{notask} }\vrule%
+    \hfill\parbox[t][\maxof{\h}{\x}][t]{0.93\textwidth-4.3cm}{\smallskip #1
+        \smallskip}\hfill\vrule%
+    \hfill\parbox[t][\maxof{\h}{\x}][c]{4cm}{\hfil #2 \hfil}\hfill\vrule
+  }
+  \hrule
+  \addtocounter{notask}{1}
+  \pagebreak[2]
+}
+
+\tikzset{>=latex,%
+  interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment
+        length=1.4323mm}}},%
+  spring/.style={decorate,decoration={snake,amplitude=1mm, segment length=2mm},thick}}
+
+\pagestyle{empty}
+\begin{document}
