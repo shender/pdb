@@ -40,7 +40,7 @@ tags=("$@")
 # composing the search command
 for index in $(seq 0 $((${#tags[@]}-1)))
 do
-    com=${com}" | grep "${tags[$index]}
+    com=${com}" | grep '[[:space:]]${tags[$index]}\b'"
 done
 
 # to get only id
