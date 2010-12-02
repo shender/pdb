@@ -9,7 +9,7 @@
 
 Предварительная настройка:
 --
-В файл **~/.latexmkrc** добавьте следующую строчку:
+* В файл **~/.latexmkrc** добавьте следующую строчку:
 $pdf_previewer = "start evince";
 
 Вместо “evince” подставьте ваш любимый просмотрщик pdf–файлов. Эта
@@ -20,16 +20,16 @@ $pdf_previewer = "start evince";
 * Для того, чтобы заработало автодополнение при выборе ключевых слов,
 допишите в **~/.bash_profile** строчку
 
-. $HOME/путь_к_папке_pdb/pdb-find-completion
+    . $HOME/путь_к_папке_pdb/pdb-find-completion
 
 Возможно, придётся разлогиниться и залогиниться снова.
 
 Любители zsh дописывают в **~/.zshrc**
 
-_pdb-find-completion() {
-    reply=( $(cat ./tags) )
-}
-compctl -K _pdb-find-completion ./pdb-find
+    _pdb-find-completion() {
+        reply=( $(cat ./tags) )
+    }
+    compctl -K _pdb-find-completion ./pdb-find
 
 и также перелогиниваются.
 
