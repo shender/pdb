@@ -48,10 +48,14 @@ com=${com}" | cut -f 1 -d ' '"
 
 # searching
 tasks=$(eval "$com")
+ntasks=$(echo "$tasks" | grep -c '.')
 
-ntasks=$(echo "$tasks" | wc -l)
-
-echo "Найдено задач: $ntasks"
-echo -e "Номера подходящих задач:\n$tasks"
-
-pdb-pdf-create $tasks
+# testing if we have found problems
+if [[ "$ntasks" -eq 0 ]]
+then
+    echo "Подходящих задач не найдено."
+else
+    echo "Найдено задач: $ntasks"
+    echo -e "Номера подходящих задач:\n$tasks"
+    pdb-pdf-create $tasks    
+fi
