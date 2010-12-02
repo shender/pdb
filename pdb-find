@@ -3,21 +3,30 @@
 # (mb) here should be also a list of possible tags
 
 # function for creating preliminary pdf
+
 pdb-pdf-create () {
     FILE=sel_tags
     
     id=("$@")
     rm $FILE.tex
-    touch $FILE.tex 
+    touch $FILE.tex
+
     cat "header.tex" >> $FILE.tex 
     
     for index in $(seq 0 $((${#id[@]}-1)))
     do
 	echo "\setcounter{notask}{${id[$index]}}" >> $FILE.tex
+
+	# copying task from database to the selected file
 	cat "problems/${id[$index]}.tex" >> $FILE.tex
 	echo -e "\n" >> $FILE.tex
+	
+	# print keywords below the task
+	echo -e "\\\vspace{0.1cm} Ключевые слова: \\\textbf{ $(sed -n ${id[$index]}p pdb) } \\\vspace{0.1cm}" >> $FILE.tex
+	echo -e "\n" >> $FILE.tex
     done
-    
+
+    # pdflatexing
     echo "\end{document}" >> $FILE.tex
     latexmk -pdf -pv -silent $FILE.tex 
 }
@@ -41,6 +50,7 @@ com=${com}" | cut -f 1 -d ' '"
 tasks=$(eval "$com")
 
 ntasks=$(echo "$tasks" | wc -l)
+
 echo "Найдено задач: $ntasks"
 echo -e "Номера подходящих задач:\n$tasks"
 
