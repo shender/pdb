@@ -19,13 +19,11 @@ $pdf_previewer = "start evince";
 
 * Для того, чтобы заработало автодополнение при выборе ключевых слов,
 допишите в **~/.bash_profile** строчку
-
     . $HOME/путь_к_папке_pdb/pdb-find-completion
 
 Возможно, придётся разлогиниться и залогиниться снова.
 
 Любители zsh дописывают в **~/.zshrc**
-
     _pdb-find-completion() {
         reply=( $(cat ./tags) )
     }
