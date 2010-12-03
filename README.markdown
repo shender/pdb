@@ -21,6 +21,7 @@ $pdf_previewer = "start evince";
 допишите в **~/.bash_profile** строчку
     . $HOME/путь_к_папке_pdb/pdb-find-completion
 
+    
 Возможно, придётся разлогиниться и залогиниться снова.
 
 Любители zsh дописывают в **~/.zshrc**
