@@ -1,0 +1,16 @@
+\taskpic{Над одним молем идеального газа совершают процесс, показанный на
+   рисунке. Найти максимальную температуру газа в течение этого
+   процесса (процесс считать квазистатическим)}{
+\begin{tikzpicture}
+  \draw[help lines,step=0.3] (0,0) grid (3,2.7);  
+  \draw[->,thick] (0,0) -- (0,3) node[right] {\tiny{$p,\unit{кПа}$}};
+  \draw[->,thick] (0,0) -- (3.5,0);
+  \draw[very thick,red] (0.6,1) to[out=90,in=180] (1.2,2) to
+  [out=0,in=90] (2.5,1);
+  \draw (0,-0.3) node {\tiny{$0$}};
+  \draw (3,0.1) -- ++(0,-0.2) node[below] {\tiny{3}};
+  \draw(0.1,1.2) -- ++(-0.2,0) node[left=-3] {\tiny{2}};
+  \draw(0.1,2.4) -- ++(-0.2,0) node[left=-3] {\tiny{3}};
+  \draw (1.5,-0.2) node {\tiny{$V,\unit{м}^3$}};
+\end{tikzpicture}
+}

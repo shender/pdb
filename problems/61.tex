@@ -1,0 +1,37 @@
+\taskpic{На рисунке приведена идеализированная вольтамперная
+  характеристика диода. Конденсатор емкости C = 100 мкФ, заряженный до
+  напряжения U = 5 В, подключается через диод к резистору с
+  сопротивлением R = 100 Ом. Какое количество тепла выделится на
+  резисторе при разрядке конденсатора?}{
+  \begin{tikzpicture}[scale=0.5]
+    \begin{axis}[
+      axis x line=middle,
+      axis y line=middle,
+      xlabel={$U$, В},
+      ylabel={$I$, мА},
+      xmin=-0.5, 
+      xmax=3.5,
+      ymin=0,
+      ymax=42,
+      xticklabels={,,},
+      grid=major,
+      extra x ticks={1},
+      extra x tick labels={1},
+      ylabel shift=-1cm,
+      every axis x label/.style=
+      {at={(ticklabel cs:0.9)},anchor=south west},
+      every axis y label/.style=
+      {at={(ticklabel cs:1.1)},anchor=north west}
+      ]
+      \addplot[ultra thick,blue,mark=none,samples=100]
+      coordinates {
+        (-0.5,0)
+        (0,0)
+        (1,10)
+        (1,20)
+        (1,30)
+        (1,40)
+      };
+    \end{axis}
+  \end{tikzpicture}
+}

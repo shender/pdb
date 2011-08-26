@@ -1,0 +1,16 @@
+\task { Лампа, соединенная последовательно с резистором, сопротивление
+  которого $R = 10$ Ом, подключена к сети. Зависимость силы тока от
+  напряжения на лампе представлена на рисунке. При каком напряжении
+  сети КПД схемы $\eta=25\%$? КПД схемы равен отношению мощности,
+  потребляемой лампой, к мощности, потребляемой от сети.}
+\vspace{0.5cm}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[xlabel={$U, \text{ В}$},ylabel={$I, \text{
+          A}$},xmin=0,xmax=32,ymin=0,ymax=7,minor x tick
+      num=2,grid=both,minor y tick num=2,width=10cm,smooth]
+      \addplot[thick,blue] coordinates {(0,0) (2,0.4) (5,1.5) (10,4) (15,5.4) (20,6)
+        (25,6.2) (30,6.3) };
+    \end{axis}
+  \end{tikzpicture}
+\end{center}

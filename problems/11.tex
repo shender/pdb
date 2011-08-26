@@ -1,0 +1,27 @@
+\task{В схеме, изображенной на рисунке, имеются четыре
+  диода. Известно, что при любом напряжении, подведенном к выводам
+  схемы, ток через амперметр не течет. ВАХ трех диодов $D1$, $D2$ и
+  $D3$ известны (см. график). Постройте ВАХ четвертого диода.  }
+
+\begin{center}
+  \parbox{4.5cm}{\begin{circuitikz}
+  \draw[o-,thick](0,1) -- (0.5,1) -- (0.5,2);
+  \draw[thick] (0.5,2) to[Do,l=$D_1$] (2,2) to [Do,l=$D_2$] (3.5,2) -- (3.5,1);
+  \draw[thick,-o] (3.5,1) -- (4,1);
+  \draw[thick] (0.5,1) -- (0.5,0) to[Do,l_=$D_3$] (2,0) to[Do,l_=$D_4$] (3.5,0) -- (3.5,1);
+  \draw[thick] (2,2) to[ammeter] (2,0);
+\end{circuitikz}}%
+\parbox{4.5cm}{\begin{tikzpicture}[scale=1.2]
+  \draw[help lines,step=0.5] (0,0) grid (2.5,2);  
+  \draw[thick,->] (0,0) -- (2.7,0) node[above] {\tiny{$U,\unit{В}$}};
+  \draw[thick,->] (0,0) -- (0,2.5) node[left] {\tiny{$I,\unit{A}$}};
+  \draw[red,thick,domain=0:0.75] plot(\x,5*\x*\x*\x) node[above] {\tiny{$D_1$}};
+  \draw[green,thick,domain=0:1.62] plot(\x,0.5*\x*\x*\x) node[above] {\tiny{$D_2$}};
+  \draw[blue,thick,domain=0:2.2] plot(\x,0.2*\x*\x*\x) node[above]
+  {\tiny{$D_3$}};
+  \foreach \x in {1,2,3,4,5} \draw (\x/2,0.1) -- +(0,-0.2)
+  node[below=-2] {\tiny{\x}};
+  \foreach \y in {0.1,0.2,0.3,0.4} \draw (0.1,5*\y) -- +(-0.2,0) node[left=-2] {\tiny{\y}};
+\end{tikzpicture}
+}
+\end{center}

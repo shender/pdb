@@ -1,0 +1,15 @@
+\taskpic{Телу массой $m$, находящемуся на горизонтальной поверхности,
+  сообщили скорость $v_0$ в направлении оси $Ox$. График зависимости
+  скорости тела $v$ от его координаты $x$ изображен на рисунке. Найти
+  зависимость величины силы трения, действующей на тело, от координаты
+  $x$.}{\pgfplotsset{width=4cm}
+    \begin{tikzpicture}
+    \begin{axis}[ axis x line=bottom, axis y line=left, xlabel=$x$,
+      ylabel=$v$, xtick=\empty, ytick=\empty, xmin=0, xmax=3.5,
+      ymin=0, ymax=3.5, extra x ticks={3.2}, extra y ticks={3.2},
+      extra x tick label={$l$}, extra y tick label={$v_0$}, xlabel
+      shift=-0.5cm, ylabel shift=-0.5cm ]
+    \addplot[blue,mark=none]{3.2-x};
+  \end{axis}
+\end{tikzpicture}
+}

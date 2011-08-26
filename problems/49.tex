@@ -1,0 +1,36 @@
+\taskpic{На рисунке приведён график зависимости давления насыщенного
+  пара некоторого вещества от температуры. Определённое количество
+  этого вещества находится в закрытом сосуде постоянного объёма в
+  равновесном состоянии, соответствующем точке $A$ на рисунке. До
+  какой температуры следует охладить эту систему, чтобы половина
+  имеющегося в сосуде вещества сконденсировалось? Объёмом
+  сконденсировавшегося вещества можно пренебречь по сравнению с
+  объёмом сосуда.}{
+  \begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+      axis x line=bottom,
+      axis y line=left,
+      xlabel={$T$, K},
+      ylabel={$p$, у.е.},
+      xmin=0, 
+      xmax=3.5,
+      ymin=0,
+      ymax=3.5,
+      xticklabels={,,},
+      yticklabels={,,},
+      grid=both,
+      extra x ticks={1,2,3},
+      extra y ticks={0.5,1,1.5,2,2.5,3},
+      extra x tick labels={100,200,300},
+      extra y tick labels={,2,,4,,6},
+      xlabel shift=-0.2cm,
+      ylabel shift=-0.2cm,
+      every axis y label/.style=
+      {at={(ticklabel cs:1.1)},anchor=north west}
+      ]
+    \addplot[thick,blue,mark=none,samples=100]{x^4/27};
+    \fill[black] (axis cs:3,2) circle (2pt);
+    \node at (axis cs:3.15,2) {$A$};
+  \end{axis}
+\end{tikzpicture}
+}
