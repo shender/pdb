@@ -1,8 +1,15 @@
 #!/bin/bash
-# adds header and footer to the
-# file with selected problems
+# добавляем \end{document} к файлу с отобранными задачами и компилируем его
 
 FILE=sel_id
 
 echo "\end{document}" >> $FILE.tex
-latexmk -pdf -pv -silent $FILE.tex
+
+pdflatex -synctex=1 $FILE.tex
+xdg-open $FILE.pdf &
+
+if [ -n "$1" ]
+    then
+    cp $FILE.tex $1.tex
+    cp $FILE.pdf $1.pdf
+fi

@@ -1,9 +1,13 @@
 #!/bin/bash
 
-rm sel_tags*
-latexmk -c sel_id.tex
-rm sel_id.tex
-rm *.synctex.gz
+# очистка результатов предыдущего прохода
+rm -f sel_tags*
+rm -f *.aux *.log *.out *.pdf *.synctex.gz
+rm -f sel_id.tex
+
+# создание файла с готовым header'ом
 cat "header.tex" > sel_id.tex
+
+# создание файла с тегами
 rm tags
 cut -f 2- -d ' ' pdb | tr ' ' '\n' | sort | uniq > tags

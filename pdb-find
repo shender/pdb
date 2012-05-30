@@ -1,8 +1,7 @@
 #!/bin/bash
-# search problems by tags
-# (mb) here should be also a list of possible tags
+# поиск задач по тегам
 
-# function for creating preliminary pdf
+# функция для создания предварительного pdf
 
 pdb-pdf-create () {
     FILE=sel_tags
@@ -17,40 +16,44 @@ pdb-pdf-create () {
     do
 	echo "\setcounter{notask}{${id[$index]}}" >> $FILE.tex
 
-	# copying task from database to the selected file
+	# копируем тело задачи в общий файл
 	cat "problems/${id[$index]}.tex" >> $FILE.tex
 	echo -e "\n" >> $FILE.tex
 	
-	# print keywords below the task
+	# пишем теги под каждой задачей
 	echo -e "\\\vspace{0.1cm} Ключевые слова: \\\textbf{ $(sed -n ${id[$index]}p pdb) } \\\vspace{0.1cm}" >> $FILE.tex
 	echo -e "\n" >> $FILE.tex
     done
 
-    # pdflatexing
+    # компиляция итогового файла и его показ 
     echo "\end{document}" >> $FILE.tex
-    latexmk -pdf -pv -silent $FILE.tex 
+    pdflatex -synctex=1 $FILE.tex
+    xdg-open $FILE.pdf
 }
 
-# beginning of search command
+# сейчас надо сделать bash-команду, которая искала бы номера задач по заданному массиву тегов
+# это начало этой команды: отправляем файл pdb (с номерами задач и соответствующими тегами) на выход
 com="cat pdb"
 
-# all tags from the input go to the array
+# собираем все запрашиваемые теги в массив tags
 tags=("$@")
 
-# composing the search command
+# составляем большую поисковую команду с grep'ом
+# сколько тегов в запросе - столько и grep'ов будет
 for index in $(seq 0 $((${#tags[@]}-1)))
 do
     com=${com}" | grep '[[:space:]]${tags[$index]}\b'"
 done
 
-# to get only id
+# на выходе поиска нам нужен только номер задачи
 com=${com}" | cut -f 1 -d ' '"
 
-# searching
+# теперь надо запустить эту команду; подходящие номера задач собираются в массиве tasks
+# а количество найденных задач - в переменной ntasks
 tasks=$(eval "$com")
 ntasks=$(echo "$tasks" | grep -c '.')
 
-# testing if we have found problems
+# теперь надо проверить, нашли ли мы что-нибудь
 if [[ "$ntasks" -eq 0 ]]
 then
     echo "Подходящих задач не найдено."
