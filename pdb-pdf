@@ -17,4 +17,5 @@ do
 done
 
 echo "\end{document}" >> $FILE.tex
-latexmk -pdf -pv $FILE.tex
+pdflatex -synctex=1 $FILE.tex
+xdg-open $FILE.pdf &

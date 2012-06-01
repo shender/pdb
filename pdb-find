@@ -28,7 +28,7 @@ pdb-pdf-create () {
     # компиляция итогового файла и его показ 
     echo "\end{document}" >> $FILE.tex
     pdflatex -synctex=1 $FILE.tex
-    xdg-open $FILE.pdf
+    xdg-open $FILE.pdf &
 }
 
 # сейчас надо сделать bash-команду, которая искала бы номера задач по заданному массиву тегов
