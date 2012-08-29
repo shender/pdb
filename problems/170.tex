@@ -1,0 +1,13 @@
+\taskpic{ На рисунках изображены две катушки, которые тянут за нитки в направлениях, указанных стрелками. В какую сторону покатится каждая из катушек? }{
+  \begin{tikzpicture}
+  \draw[interface,thick] (4,0) -- (0,0);
+  \draw[thick] (0.75,0.75) circle (0.75);
+  \draw[thick,fill=black] (0.75,0.75) circle (0.5);
+  \draw[thick,dashed] (0.75+0.46,0.75-0.2) -- ++(-0.4,-0.92);
+  \draw[thick,->] (0.75+0.46,0.75-0.2) -- ++(0.4,0.92);
+  \draw[thick] (2.75,0.75) circle (0.75);
+  \draw[thick,fill=black] (2.75,0.75) circle (0.5);
+  \draw[thick,dashed] (2.75+0.3,0.75-0.4) -- ++(-0.8,-0.6);
+  \draw[thick,->] (2.75+0.3,0.75-0.4) -- ++(0.8,0.6);
+\end{tikzpicture}
+}
