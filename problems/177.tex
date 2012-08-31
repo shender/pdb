@@ -1,0 +1,13 @@
+\taskpic{Найдите сопротивление $R$ цепи между точками $A$ и $B$, если
+  сопротивление каждого звена $R$.}
+{
+  \begin{tikzpicture}
+    \begin{scope}[rotate=-45]
+      \draw[step=0.7cm,thick] (0,0) node[left,blue] {$A$} grid
+      (2.1,2.1) node[right,blue] {$B$};
+      \foreach \x in {0,0.7,1.4,2.1}
+      \foreach \y in {0,0.7,1.4,2.1} \draw[fill=black] (\x,\y) circle (0.05cm);
+    \end{scope}
+  \end{tikzpicture}
+}
+% ГГК, 13.23
