@@ -1,0 +1,17 @@
+\task{ В схеме, показанной на рисунке, сопротивление каждого резистора
+  равно $R_0$. Найдите сопротивление схемы между точками $A$ и $B$. }
+\begin{center}
+  \ctikzset{bipoles/length=1.2cm}
+  \begin{circuitikz}
+    \draw[thick] (0,0) node[left,blue] {$A$} to[generic,o-*] ++(60:2cm) to [generic,*-*]
+    ++(0:2cm) to[generic,*-*] ++(-60:2cm) node[right,blue] {$B$}
+    to[generic,*-*] ++(-120:2cm) to[generic,*-*] ++(-180:2cm) to[generic,*-o]
+    (0,0);
+    \draw[thick] (0,0) to[generic,o-*] (2,0) to[generic,*-o] (4,0);
+    \draw[thick] (0,0) ++(60:2cm) to[generic] (2,0) to[generic]
+    ++(-60:2cm);
+    \draw[thick] (0,0) ++(-60:2cm) to[generic] (2,0) to[generic] ++(60:2cm);
+  \end{circuitikz}
+  \ctikzset{bipoles/length=1.4cm}
+\end{center}
+% Летняя школа Рысь, 2012 год
