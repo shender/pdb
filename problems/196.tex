@@ -1,0 +1,60 @@
+\taskpic{ Три сообщающихся сосуда с водой прикрыты поршнями. К поршням
+  шарнирно прикреплена на вертикальных стержнях легкая горизонтальная
+  перекладина. В каком месте нужно приложить к палке силу $F$, чтобы
+  она осталась горизонтальной? Диаметры сосудов и расстояния между
+  ними указаны на рисунке. } 
+{
+  \begin{tikzpicture}
+    % подставка
+    \draw[very thick,interface] (4.2,0) -- (0.1,0);
+    % вода
+    \draw[white,fill=blue!20] (0.25,0) rectangle (0.75,1.7);
+    \draw[white,fill=blue!20] (1.6,0) rectangle (2.4,1.7);
+    \draw[white,fill=blue!20] (2.9,0) rectangle (4.1,1.7);
+    \draw[blue!20,fill=blue!20] (0.5,0.3) rectangle (3,0.5);
+    % цилиндры
+    \draw[very thick] (0.25,0) -- (0.25,2) (0.75,2) -- (0.75,0.5)
+    (0.75,0.3) -- (0.75,0) -- (0.25,0);
+    \draw[very thick] (1.6,0) -- (1.6,0.3) (1.6,0.5) --  (1.6,2) (2.4,2) --
+    (2.4,0.5) (2.4,0.3) -- (2.4,0) -- (1.6,0);
+    \draw[very thick] (2.9,0) -- (2.9,0.3) (2.9,0.5) -- (2.9,2);
+    \draw[very thick] (4.1,0) -- (4.1,2);
+    % трубочки
+    \draw[thick] (0.75,0.5) -- (1.6,0.5) (2.4,0.5) -- (2.9,0.5);
+    \draw[thick] (0.75,0.3) -- (1.6,0.3) (2.4,0.3) -- (2.9,0.3);
+    % поршни
+    \draw[pattern=north east lines] (0.25,1.7) rectangle (0.75,1.9);
+    \draw[pattern=north east lines] (1.6,1.7) rectangle (2.4,1.9);
+    \draw[pattern=north east lines] (2.9,1.7) rectangle (4.1,1.9);
+    % шарниры
+    \draw[fill=white] (0.5,1.9) circle (0.05cm);
+    \draw[fill=white] (0.5,3) circle (0.05cm);
+    \draw[fill=white] (2,1.9) circle (0.05cm);
+    \draw[fill=white] (2,3) circle (0.05cm);
+    \draw[fill=white] (3.5,1.9) circle (0.05cm);
+    \draw[fill=white] (3.5,3) circle (0.05cm);
+    % стержни
+    \draw[ultra thick] (0.5,1.95) -- (0.5,2.95);
+    \draw[ultra thick] (2,1.95) -- (2,2.95);
+    \draw[ultra thick] (3.5,1.95) -- (3.5,2.95);
+    % палка
+    \draw[thick,fill=gray] (0.4,3) rectangle (3.6,3.1);
+    % разметка
+    \draw[blue,<->] (0.5,2.5) -- (2,2.5) node[above,midway,blue] {$a$};
+    \draw[blue,<->] (2,2.5) -- (3.5,2.5) node[above,midway,blue]
+    {$a$};
+    \draw[blue,dashed] (0.25,0) -- ++(0,-0.5);
+    \draw[blue,dashed] (0.75,0) -- ++(0,-0.5);
+    \draw[blue,dashed] (1.6,0) -- ++(0,-0.5);
+    \draw[blue,dashed] (2.4,0) -- ++(0,-0.5);
+    \draw[blue,dashed] (2.9,0) -- ++(0,-0.5);
+    \draw[blue,dashed] (4.1,0) -- ++(0,-0.5);
+    \draw[blue,<->] (0.25,-0.25) -- ++ (0.5,0) node[below,midway,blue]
+    {$d_1$};
+    \draw[blue,<->] (1.6,-0.25) -- ++ (0.8,0) node[below,midway,blue] {$d_2$};
+    \draw[blue,<->] (2.9,-0.25) -- ++ (1.2,0) node[below,midway,blue]
+    {$d_3$};
+    \draw[thick,->] (1,3.75) node[right,blue] {$F$} -- (1,3.1);
+  \end{tikzpicture}
+}
+% Летняя школа Рысь, 2012
