@@ -23,20 +23,20 @@
 Для того, чтобы заработало автодополнение при выборе ключевых слов,
 допишите в файл =~/.bash_profile= (или =~/.bashrc=) строчку
 
-#+begin_example
+#+BEGIN_EXAMPLE
 . $HOME/путь_к_папке_pdb/pdb-find-completion
-#+end_example
+#+END_EXAMPLE
 
 Возможно, придётся разлогиниться и залогиниться снова. 
 
 Любители =zsh= дописывают в =~/.zshrc=
 
-#+begin_example
+#+BEGIN_EXAMPLE
 _pdb-find-completion() {
     reply=( $(cat ./tags) )
 }
 compctl -K _pdb-find-completion ./pdb-find
-#+end_example
+#+END_EXAMPLE
 
 и также перелогиниваются.
 
