@@ -1,0 +1,21 @@
+\taskpic{ К концам двух нерастянутых пружин, жёсткости которых равны
+  $k_1$ и $k_2$, прикреплено тело массы $m$ так, что оно может
+  двигаться вдоль прямой $AB$. Конец левой пружины
+  закреплён. Удерживая тело на месте, конец $B$ правой пружины отводят
+  на расстояние $l$ и закрепляют в точке $B'$, после чего тело
+  отпускают. Найти наибольшую скорость тела. Трением и силой тяжести
+  пренебречь.}
+{
+  \begin{tikzpicture}
+    \draw[very thick, interface] (0,0) -- (0,3);
+    \draw[very thick, interface] (2.8,3) -- (2.8,0); 
+    \draw[thick,spring] (0,2) node[left=0.085cm,blue] {$A$} -- (1,2)
+    node[below,midway,blue] {$k_1$};
+    \draw[thick,spring] (1.1,2) -- (2,2) node[above=0.05cm,blue] {$B$}
+    node[below,midway,blue] {$k_2$};
+    \draw[fill=black] (1,2) circle (0.07) node[above=0.2cm,blue] {$m$};
+    \draw[dashed] (2,2) -- (2.8,2) node[above right=0.05cm,blue] {$B'$};
+    \draw[blue,<->] (2,1.7) -- (2.8,1.7) node[below,midway] {$l$};
+  \end{tikzpicture}
+}
+% Новосиб, 1.74
