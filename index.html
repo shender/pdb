@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Олимпиадные задачи по физике by shender</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Олимпиадные задачи по физике</h1>
+        <p>База данных с возможностью поиска</p>
+
+        <p class="view"><a href="https://github.com/shender/pdb">View the Project on GitHub <small>shender/pdb</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/shender/pdb/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/shender/pdb/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/shender/pdb">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Описание.</h1>
+
+<p>База олимпиадных задач по физике с интерфейсом для поиска по ключевым
+словам. </p>
+
+<h1>Требования.</h1>
+
+<ol>
+<li><p>Linux. </p></li>
+<li><p>bash или zsh.</p></li>
+<li><p>texlive.</p></li>
+</ol><h1>Установка.</h1>
+
+<ol>
+<li><p>Скачайте zip–файл со всеми скриптами и задачами (или клонируйте этот репозиторий — если вы знаете, как это делается).</p></li>
+<li><p>Распакуйте его в выбранном вами месте.</p></li>
+</ol><h1>Настройка.</h1>
+
+<p>Для того, чтобы заработало автодополнение при выборе ключевых слов,
+допишите в файл <code>~/.bash_profile</code> (или <code>~/.bashrc</code>) строчку</p>
+
+<pre><code>. $HOME/путь_к_папке_pdb/pdb-find-completion
+</code></pre>
+
+<p>Возможно, придётся разлогиниться и залогиниться снова. </p>
+
+<p>Любители <code>zsh</code> дописывают в <code>~/.zshrc</code></p>
+
+<pre><code>_pdb-find-completion() {
+    reply=( $(cat ./tags) )
+}
+compctl -K _pdb-find-completion ./pdb-find
+</code></pre>
+
+<p>и также перелогиниваются.</p>
+
+<h1>Описание процесса работы с базой.</h1>
+
+<ol>
+<li><p>Перед началом поиска необходимо выполнить <code>./pdb-init</code>. Это
+требуется для очистки результатов предыдущего поиска.</p></li>
+<li>
+<p>Для поиска задач по ключевым словам надо выполнить <code>./pdb-find tag1
+tag2 ...</code>, где <code>tag1</code>, <code>tag2</code> ... — ключевые слова, по которым ведётся
+поиск. Ищутся задачи, которые подходят по совокупности ключевых
+слов, т.е. между ключевыми словами стоит «И». Список всех
+существующих ключевых слов есть в файле <code>tags</code>.</p>
+
+<p>Пример: <code>./pdb-find электричество схема</code> — поиск по задачам на
+электричество, в которых дана какая-то схема.</p>
+</li>
+<li><p>Скрипт напишет, сколько задач удовлетворяет данному критерию,
+сделает из найденных задач промежуточный pdf–файл и покажет его
+вам. В этом файле номер рядом с задачей соответствует её номеру в
+базе данных.</p></li>
+<li>
+<p>Изучите pdf–файл. Добавьте интересующие вас задачи в итоговый файл
+с помощью команды <code>./pdb-add id1 id2 id3 ...</code>, где <code>id1</code>, <code>id2</code>,
+<code>id3</code>,... — номера задач.</p>
+
+<p>Пример: <code>./pdb-add 1 5 21</code> добавит в файл 1-ю, 15-ю и 21-ю
+задачи.</p>
+</li>
+<li><p>Повторяйте шаги 2–4 пока не наберёте столько задач, сколько
+нужно. На каждом этапе добавления задач скрипт сообщит, сколько уже
+задач отобрано.</p></li>
+<li>
+<p>Выполните <code>./pdb-compile</code>, чтобы получить итоговый pdf–файл с
+задачами. Получившийся файл автоматически отобразится в вашем
+просмотрщике pdf–файлов.</p>
+
+<p>Запуск этой команды с аргументом <code>./pdb-compile ИМЯ</code> приведёт к
+тому, что будут созданы итоговые файлы <code>ИМЯ.tex</code> и <code>ИМЯ.pdf</code>.</p>
+</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/shender">shender</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
