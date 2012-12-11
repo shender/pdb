@@ -1,0 +1,16 @@
+\taskpic{ Параллельный пучок падает на боковую поверхность стеклянной
+  призмы, сечение которой является правильным шестиугольником
+  (см. рис.). Точки $A$ и $B$ на рисунке являются серединами
+  соответствующих сторон. Пучок преломляется так, что из призмы
+  выходят два отдельных параллельных пучка. Найдите минимальный
+  показатель преломления материала призмы, при котором такое возможно.
+} {
+  \begin{tikzpicture}
+    \draw[white,fill=blue!20] (-2.5,-0.6) rectangle (-0.75,0.6);
+    \node at (0,0) [draw,fill=white,regular polygon, regular
+    polygon sides=6, minimum size=2.5cm,outer sep=0pt] {};
+    \draw[thick,marrow] (-2.5,-0.6) -- (-0.9,-0.6) node[right,blue] {$B$};
+    \draw[thick,marrow] (-2.5,0.6) -- (-0.9,0.6) node[right,blue] {$A$};
+  \end{tikzpicture}
+}
+% Physics Challengs, TPT, May 2012
