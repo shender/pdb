@@ -6,31 +6,27 @@
   имеющегося в сосуде вещества сконденсировалось? Объёмом
   сконденсировавшегося вещества можно пренебречь по сравнению с
   объёмом сосуда.}{
-  \begin{tikzpicture}[scale=0.5]
-  \begin{axis}[
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=5cm,
       axis x line=bottom,
-      axis y line=left,
+      axis y line=middle,
+      enlargelimits=upper,
       xlabel={$T$, K},
       ylabel={$p$, у.е.},
-      xmin=0, 
-      xmax=3.5,
-      ymin=0,
-      ymax=3.5,
-      xticklabels={,,},
-      yticklabels={,,},
+      ytick={0,1,2,...,7},
+      ymin=0,ymax=7,
+      minor tick num=1,
+      domain=0:350,
+      every axis y label/.style={at={(ticklabel cs:1.15)},anchor=north
+  west},
+      tick label style={font=\tiny},
+      label style={font=\tiny},
       grid=both,
-      extra x ticks={1,2,3},
-      extra y ticks={0.5,1,1.5,2,2.5,3},
-      extra x tick labels={100,200,300},
-      extra y tick labels={,2,,4,,6},
-      xlabel shift=-0.2cm,
-      ylabel shift=-0.2cm,
-      every axis y label/.style=
-      {at={(ticklabel cs:1.1)},anchor=north west}
       ]
-    \addplot[thick,blue,mark=none,samples=100]{x^4/27};
-    \fill[black] (axis cs:3,2) circle (2pt);
-    \node at (axis cs:3.15,2) {$A$};
+    \addplot[thick,blue] {0.00000000075*x^4};
+    \fill[black] (axis cs:300,4) circle (1pt);
+    \node at (axis cs:300,3.5) {\tiny{$A$}};
   \end{axis}
 \end{tikzpicture}
 }

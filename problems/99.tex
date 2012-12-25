@@ -6,8 +6,8 @@
   не теряя с ними электрического контакта. В некоторый момент
   перемычке сообщают скорость $v_0$ вдоль шин. Опишите характер
   движения перемычки.}{
-  \begin{circuitikz}
-    \draw (0,0) to[L,l^=$L$] (0,2);
+  \begin{tikzpicture}[circuit ee IEC]
+    \draw (0,0) to[blue,inductor={info=$L$}] (0,2);
     \draw[thick] (0,2) -- (2,2);
     \draw[thick] (0,0) -- (2,0);
     \draw[very thick] (1.5,-0.3) -- (1.5,2.3) node[above,blue] {$m$};
@@ -16,5 +16,5 @@
     \draw[blue] (0.75,1.75) circle (0.15cm) node[below=0.1cm] {$B$};
     \draw[blue] (0.7,1.8) -- (0.8,1.7);
     \draw[blue] (0.7,1.7) -- (0.8,1.8);
-  \end{circuitikz}
+  \end{tikzpicture}
 }

@@ -8,11 +8,13 @@
   выделяющуюся в резисторе $2R$ в установившемся режиме. Все элементы
   можно считать идеальными, их параметры указаны на рисунке.}
 {
-  \begin{circuitikz}
-    \draw[thick] (0,0) to[battery,l_=$\mathcal{E}$] (0,2)
-    to[generic,l^=$R$] (1.5,2) to[generic,l^=$2R$] (3,2)
-    to[capacitor,l_=$C$] (3,0) -- (0,0);
-    \draw[thick] (1.5,2) to[cspst] (1.5,0);
-  \end{circuitikz}
+  \begin{tikzpicture}[circuit ee IEC,scale=0.8]
+    \node[contact] (A) at (2,2) {};
+    \node[contact] (B) at (2,0) {};
+    \draw[thick] (A) to[resistor={info'=$R$}] (0,2)
+    to[battery={info=$\mathcal{E}$} ] (0,0) -- (4,0)
+    to[capacitor={info=$C$}] (4,2) to[resistor={info'=$2R$}] (A);
+    \draw[thick] (A) to[make contact] (B);
+  \end{tikzpicture}
 }
 % МФТИ, сборник задач для абитуриентов; летняя школа "Рысь", 2012

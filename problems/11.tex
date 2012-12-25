@@ -20,19 +20,21 @@
  \begin{tikzpicture}
    \begin{axis}[
      height=6cm, width=6cm,
-     grid=major,
+     grid=both,
      xlabel={$U$, В},
      ylabel={$I$, А},
-     xtick={1,...,4},
+     minor tick num=3,
+     axis x line=bottom,
+     axis y line=left,
      ytick={0,7.5,...,30},
-     yticklabels={0,0.1,0.2,0.3,0.4},
-     xmin=0,ymin=0,ymax=32,samples=50]
+     yticklabels={,0.1,0.2,0.3,0.4},
+     xmin=0,ymin=0,ymax=35,xmax=4.5,samples=50]
      \addplot[red,very thick] {6*x^3};
-     \node[red] at (axis cs:1.2,30) {$D_1$};
+     \node[fill=white,draw=red] at (axis cs:0.6,17) {$D_1$};
      \addplot[green,very thick] {0.9*x^3};
-     \node [green] at (axis cs:2.8,30) {$D_2$};
+     \node [fill=white,draw=green] at (axis cs:2,17) {$D_2$};
      \addplot[blue,very thick] {0.45*x^3};
-     \node [blue] at (axis cs:3.7,30) {$D_3$};
+     \node [fill=white,draw=blue] at (axis cs:4,17) {$D_3$};
    \end{axis}
  \end{tikzpicture}}
 \end{center}

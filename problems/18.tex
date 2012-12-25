@@ -15,26 +15,22 @@
 коэффициент теплопроводности вещества. 
 }
 
-\begin{figure}[h]
-  \centering
-  \begin{tikzpicture}[>=latex,scale=1.2]
-    \draw[help lines,xstep=0.6,ystep=0.35] (0,0) grid (3.4,3.5);
-    \draw[thick,->] (0,0) -- (3.6,0) node[above=5,left=-5] {\tiny{$T$, K}};
-    \draw[thick,->] (0,0) -- (0,4) node[right=23,below] {\tiny{$k$,Вт/(м$\cdot$К)}};
-    \coordinate (a) at (0.8,3);
-    \coordinate (b) at (3.2,2.3);
-    \coordinate (c) at (1.5,4.3);
-    \coordinate (d) at (2.2,0);
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[ymin=0,ymax=2,xmin=0,xmax=600,
+      x=0.01cm,
+      y=2cm,
+      minor tick num=3,
+      xlabel={$T$, K},
+      ylabel={$k$, Вт/м $\cdot$ K},
+      grid=both
+      ]
+    \coordinate (a) at (80,180);
+    \coordinate (b) at (530,120);
+    \coordinate (c) at (180,250);
+    \coordinate (d) at (320,0);
     \draw[very thick,red] (a) .. controls (c) and (d) .. (b);
-    \draw[blue,dashed] (0.92,0.35*9) -- ++(0,-0.35*9);
-    \draw[blue,dashed] (0.6*5,0.35*5.5) -- ++(0,-0.35*5.5) node [below=-1] {\tiny{$T_2$}};
-    \draw[blue,->] (0.5,-0.2) node[left=-3] {\tiny{$T_1$}} to
-    [out=0,in=215] (0.9,-0.05);
-    \draw[thick] (0.6*2,0.15/2) -- ++(0,-0.15) node[below] {\tiny{$200$}};
-    \draw[thick] (0.6*4,0.15/2) -- ++(0,-0.15) node[below]
-    {\tiny{$400$}};
-    \draw[thick] (0.1,0.35*5) -- ++(-0.2,0) node[left=-3] {\tiny{$1$}}; 
-    \draw[thick] (0.1,0.35*10) -- ++(-0.2,0) node[left=-3] {\tiny{$2$}};  
-  \end{tikzpicture}
-\end{figure}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
 % Козел

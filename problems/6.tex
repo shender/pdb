@@ -1,25 +1,21 @@
-\task{В схеме, изображенной на рисунке, сопротивления всех
-  резисторов одинаковы и равны $R$. Напряжение на клеммах равно
-  $U$. Определите силу тока $I$ в подводящих проводах, если их
-  сопротивлением можно
-  пренебречь.}
-
-\begin{figure}[h]
-  \centering
-  \begin{circuitikz}[scale=0.8]
-    \draw[thick] (4,7) to [generic] (4,4) to [generic] (7,4) to [generic]
-    (4,7);
-    \draw[thick] (7,4) to [generic] (4,1.01) to [generic] (4,4);
-    \draw[thick] (4,1) to [generic] (1,4) to [generic] (4,7);
-    \draw[thick] (1,4) to [generic] (4,4);
-    \draw[o-] (1,2) -- (1,4);
-    \draw[o-] (2,1) to[out=0,in=-135] (4,4);
-    \draw[<->] (1,2) -- (2,1) node [midway,fill=white] {$U$};
-    \draw[fill=black] (1,4)  circle (0.1) node [left] {$A$};
-    \draw[fill=black] (7,4)  circle (0.1) node [right] {$B$};
-    \draw[fill=black] (4,7)  circle (0.1) node [above] {$C$};
-    \draw[fill=black] (4,1)  circle (0.1) node [below] {$D$};
-    \draw[fill=black] (4,4)  circle (0.1);
-  \end{circuitikz}
-\end{figure}
+\taskpic{В схеме, изображенной на рисунке, сопротивления всех
+  резисторов одинаковы и равны $R$. Напряжение на обозначенных клеммах
+  равно $U$. Определите силу тока $I$ в подводящих проводах, если их
+  сопротивлением можно пренебречь.}
+{
+  \begin{tikzpicture}[circuit ee IEC,scale=0.9]
+    \node[contact,info={$A$}] (A) at (0,0) {};
+    \node[contact,info={$B$}] (B) at (4,0) {};
+    \node[contact,info={$C$}] (C) at (2,2) {};
+    \node[contact,info'={$D$}] (D) at (2,-2) {};
+    \node[contact] (O) at (2,0) {};
+    \draw (A) to[resistor] (O) to [resistor] (C) to[resistor] (B)
+    to[resistor] (D) to[resistor] (A);
+    \draw (A) to[resistor] (C) (O) to[resistor] (D) (O) to[resistor]
+    (B);
+    \draw[-o] (A) -- (0,-1);
+    \draw[-o] (O) to[out=235,in=0] (1,-2);
+    \draw[<->] (0,-1) -- (1,-2) node[midway,fill=white] {$U$};
+  \end{tikzpicture}
+}
 % ММО 1968-1985, 3.25

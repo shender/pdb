@@ -6,14 +6,13 @@
   подключенного между точками 1 и 2? 
 }
 {
-  \begin{circuitikz}
-    \draw[thick] (0,4) to[generic] (2,4) to[generic] (4,4);
-    \draw[thick] (0,3) to[generic] (2,3) to[generic] (4,3);
-    \draw[thick] (0,2) to[generic] (2,2) to[battery] (4,2);
-    \draw (0,2) -- (0,4);
-    \draw (4,2) -- (4,4);
-    \draw[fill=black] (2,3) circle (0.07) node[below,blue] {2};
-    \draw[fill=black] (2,4) circle (0.07) node[above,blue] {1};
-  \end{circuitikz}
+  \begin{tikzpicture}[circuit ee IEC]
+    \node[contact,info={1}] (A) at (2,4) {};
+    \node[contact,info'={2}] (B) at (2,3) {};
+    \draw (0,4) to[resistor] (A) to[resistor] (4,4);
+    \draw (0,3) to[resistor] (B) to[resistor] (4,3);
+    \draw (0,2) to[resistor] (2,2) to[battery] (4,2);
+    \draw (0,4) -- (0,2) (4,4) -- (4,2);
+  \end{tikzpicture}
 }
 % Physics Challenges, TPT, April 2009

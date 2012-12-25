@@ -1,17 +1,17 @@
 \task{ В схеме, показанной на рисунке, сопротивление каждого резистора
   равно $R_0$. Найдите сопротивление схемы между точками $A$ и $B$. }
 \begin{center}
-  \ctikzset{bipoles/length=1.2cm}
-  \begin{circuitikz}
-    \draw[thick] (0,0) node[left,blue] {$A$} to[generic,o-*] ++(60:2cm) to [generic,*-*]
-    ++(0:2cm) to[generic,*-*] ++(-60:2cm) node[right,blue] {$B$}
-    to[generic,*-*] ++(-120:2cm) to[generic,*-*] ++(-180:2cm) to[generic,*-o]
-    (0,0);
-    \draw[thick] (0,0) to[generic,o-*] (2,0) to[generic,*-o] (4,0);
-    \draw[thick] (0,0) ++(60:2cm) to[generic] (2,0) to[generic]
-    ++(-60:2cm);
-    \draw[thick] (0,0) ++(-60:2cm) to[generic] (2,0) to[generic] ++(60:2cm);
-  \end{circuitikz}
-  \ctikzset{bipoles/length=1.4cm}
+  \begin{tikzpicture}[circuit ee IEC]
+    \node[contact] (O) at (0,0) {}; 
+    \foreach \i in {1,2,...,6} {\node[contact] (contact \i) at
+      ($2*({cos(60*\i)},{sin(60*\i)})$) {};
+      \draw (contact \i) to[resistor] (O);
+    }
+    \draw (contact 1) to[resistor] (contact 2) to[resistor] (contact
+    3) to[resistor] (contact 4) to[resistor] (contact 5) to[resistor]
+    (contact 6) to[resistor] (contact 1);
+    \draw (2,0) node[right,blue] {$B$};
+    \draw (-2,0) node[left,blue] {$A$};
+  \end{tikzpicture}
 \end{center}
 % Летняя школа Рысь, 2012 год
