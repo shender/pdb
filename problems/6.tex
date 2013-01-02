@@ -4,10 +4,10 @@
   сопротивлением можно пренебречь.}
 {
   \begin{tikzpicture}[circuit ee IEC,scale=0.9]
-    \node[contact,info={$A$}] (A) at (0,0) {};
-    \node[contact,info={$B$}] (B) at (4,0) {};
-    \node[contact,info={$C$}] (C) at (2,2) {};
-    \node[contact,info'={$D$}] (D) at (2,-2) {};
+    \node[contact] (A) at (0,0) {};
+    \node[contact] (B) at (4,0) {};
+    \node[contact] (C) at (2,2) {};
+    \node[contact] (D) at (2,-2) {};
     \node[contact] (O) at (2,0) {};
     \draw (A) to[resistor] (O) to [resistor] (C) to[resistor] (B)
     to[resistor] (D) to[resistor] (A);
