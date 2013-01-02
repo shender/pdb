@@ -1,0 +1,26 @@
+\taskpic{ Два однородных стержня, массы которых $m_1$ и $m_2$,
+  опираются на гладкие вертикальные стенки и гладкую горизонтальную
+  поверхность. Найдите соотношение между углами $\alpha_1$ и
+  $\alpha_2$ при равновесии системы.   }
+{
+  \begin{tikzpicture}
+    \coordinate (a) at (0,2.5);
+    \coordinate (b) at (2.1,0);
+    \coordinate (c) at (3,2.5);
+    \coordinate (d) at (3,0);
+    \coordinate (e) at (0,0); 
+
+    \marktheangle[blue]{b}{c}{d}{0.4cm}{$\alpha_2$};
+    \marktheangle[blue]{b}{e}{a}{0.4cm}{$\alpha_1$};
+
+    \draw[line width=0.6mm] (a) -- (b) node[blue,midway,below left]
+    {$m_1$};
+    \draw[line width=0.8mm] (b) -- (c) node[blue,midway,above left]
+    {$m_2$};
+
+    \draw[thick,interface] (3,3) -- (3,0);
+    \draw[thick,interface] (3,0) -- (0,0);
+    \draw[thick,interface] (0,0) -- (0,3);
+  \end{tikzpicture}
+}
+% Квант, 1980, №9
