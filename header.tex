@@ -4,8 +4,6 @@
 \usepackage{calc}
 \usepackage{wrapfig}
 
-\usepackage{tabularx,makecell}
-
 \usepackage{cmlgc}
 \usepackage[english,russian]{babel}
 \usepackage[utf8]{inputenc}
@@ -13,17 +11,6 @@
 \usepackage[pdftex]{graphicx}
 
 \usepackage{subfig}
-\usepackage{pgfplots,tikz}
-\usetikzlibrary{%
-  arrows,%
-  calc,%
-  patterns,%
-  decorations.pathreplacing,%
-  decorations.pathmorphing,%
-  decorations.markings,%
-  circuits.ee,%
-  circuits.ee.IEC
-}
 
 % colors of the hyperlinks
 \hypersetup{colorlinks,%
@@ -42,130 +29,9 @@
 \newcommand{\vareps}{\varepsilon}
 \newcommand{\const}{\mathrm{const}}
 
-% счётчик задач
-\newcounter{notask}
-\setcounter{notask}{1}
+\input{task-is}
 
-% условие без картинки
-\newcommand{\task}[1]{
-  \begin{tabularx}{\textwidth}{|c|X|}
-    \cline{1-2}
-    \makecell*[{{p{0.3cm}}}]{ \centering \arabic{notask}} &
-    \makecell*[{{p{\hsize}}}]{ #1 } \\
-    \cline{1-2}
-  \end{tabularx}
-
-  \vspace{-1pt}
-
-  \addtocounter{notask}{1}
-}
-
-% условие с картинкой
-\newcommand{\taskpic}[3][4cm]{
-  \begin{tabularx}{\textwidth}{|c|X|c|}
-    \cline{1-3}
-    \makecell*[{{p{0.3cm}}}]{ \centering \arabic{notask}} &
-    \makecell*[{{p{\hsize}}}]{ #2 } &
-    \makecell*[{{p{#1}}}]{ \centering #3} \\
-    \cline{1-3}
-  \end{tabularx}
-
-  \vspace{-1pt}
-
-  \addtocounter{notask}{1}
-}
-
-
-% % условие без картинки
-% \newcommand{\task}[1]{
-%   \hrule
-%   \hbox to \textwidth {%
-%     \vrule
-%     \parbox[t]{0.04\textwidth}{\smallskip \centering \arabic{notask}}%
-%     \vrule%
-%     \hfill%
-%     \parbox[t]{0.93\textwidth}{\smallskip #1 \smallskip}\hfill%
-%     \vrule
-%   }
-%   \hrule
-%   \addtocounter{notask}{1}
-%   \pagebreak[2]
-% }
-
-% \newlength{\h}
-% \newsavebox{\taskbox}
-% \newlength{\x}
-% \newsavebox{\pictbox}
-
-% % условие с картинкой (картинка выравнивается по центру)
-% \newcommand{\taskpic}[2]{
-%   \savebox{\taskbox}{\parbox[t]{0.93\textwidth-4.3cm}{\smallskip #1 \smallskip}}
-%   \savebox{\pictbox}{\parbox[t]{4cm}{\smallskip \centering
-%       \vspace{0pt} #2 \smallskip}}
-%   \h=\ht\taskbox
-%   \advance\h\dp\taskbox
-%   \x=\ht\pictbox
-%   \advance\x\dp\pictbox
-%   \hrule
-%   \hbox to \textwidth {%
-%     \vrule\parbox[t][\maxof{\h}{\x}][t]{0.04\textwidth}{ \smallskip
-%       \centering \arabic{notask} }\vrule%
-%     \hfill\parbox[t][\maxof{\h}{\x}][t]{0.93\textwidth-4.3cm}{\smallskip #1
-%         \smallskip}\hfill\vrule%
-%     \hfill\parbox[t][\maxof{\h}{\x}][c]{4cm}{\hfil #2 \hfil}\hfill\vrule
-%   }
-%   \hrule
-%   \addtocounter{notask}{1}
-%   \pagebreak[2]
-% }
-
-% interface - потолок или пол
-% spring - пружина
-% marrow - стрелка в середине отрезка
-\tikzset{>=latex,%
-  interface/.style={postaction={draw,decorate,decoration={border,angle=45,amplitude=0.2cm,segment
-        length=1mm}}},%
-  spring/.style={decorate,decoration={coil,amplitude=1mm, segment
-      length=1mm},thick},%
-  marrow/.style={postaction={draw,decorate,decoration={markings,
-        mark=at position 0.6 with {\arrow{latex}}}}}}
-
-% амперметр
-\tikzset{circuit declare symbol = ammeter}
-\tikzset{set ammeter graphic ={draw,generic circle IEC, minimum size=5mm,info=center:A}}
-
-% вольтметр
-\tikzset{circuit declare symbol = voltmeter}
-\tikzset{set voltmeter graphic ={draw,generic circle IEC, minimum size=5mm,info=center:V}}
-
-% обозначение угла
-\tikzset{arcnode/.style={
-            decoration={
-                        markings, raise = 3mm,  
-                        mark=at position 0.5 with { 
-                                    \node[inner sep=0] {#1};
-                        }
-            },
-            postaction={decorate}
-      }
-}
-
-% команда для отметки угла: проводит дугу между двумя лучами,
-% проведёнными между точками #2--#3 и #2--#4
-% первый аргумент - необязательный, стиль линии
-% #2,#3,#4 - точки
-% #5 - радиус дуги для обозначения угла
-% #6 - обозначение угла
-\newcommand*\marktheangle[6][]{
-            \draw[thick,arcnode={#6},#1] let \p2=($(#3)-(#2)$),%
-                        \p3=($(#4)-(#2)$),%
-                        \n2 = {atan2(\x2,\y2)},%
-                        \n3 = {atan2(\x3,\y3)}%
-                        in ($(\n2:#5)+(#2)$) arc (\n2:\n3:#5);
-            }
-
-
-\pgfplotsset{compat=newest}
+\input{tikz-is}
 
 \pagestyle{empty}
 \parindent=0mm

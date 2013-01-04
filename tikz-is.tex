@@ -1,0 +1,68 @@
+% основные библиотеки
+\usepackage{pgfplots,tikz}
+\usetikzlibrary{%
+  arrows,%
+  calc,%
+  patterns,%
+  intersections,%
+  decorations.pathreplacing,%
+  decorations.pathmorphing,%
+  decorations.text,%
+  decorations.markings%
+}
+
+
+% основные используемые стили
+% стиль для стрелки
+\tikzset{>=latex,%
+% платформа: пол или потолок  
+  interface/.style={postaction={draw,decorate,decoration={border,
+        angle=45, amplitude=0.2cm, segment length=1mm}}},%
+% пружина  
+  spring/.style={decorate,decoration={coil,amplitude=1mm, segment
+      length=1mm},thick},%
+% стрелка в середине отрезка  
+  marrow/.style={postaction={draw,decorate,decoration={markings,
+        mark=at position 0.6 with {\arrow{latex}}}}}}
+
+% обозначение угла
+\tikzset{arcnode/.style={
+            decoration={
+                        markings, raise = 2mm,  
+                        mark=at position 0.5 with { 
+                                    \node[inner sep=0] {#1};
+                        }
+            },
+            postaction={decorate}
+      }
+}
+
+% команда для отметки угла: проводит дугу между двумя лучами,
+% проведёнными между точками #2--#3 и #2--#4
+% первый аргумент - необязательный, стиль линии
+% #2,#3,#4 - точки
+% #5 - радиус дуги для обозначения угла
+% #6 - обозначение угла, например, $\alpha$
+\newcommand*\marktheangle[6][]{
+            \draw[thick,arcnode={#6},#1] let \p2=($(#3)-(#2)$),%
+                        \p3=($(#4)-(#2)$),%
+                        \n2 = {atan2(\x2,\y2)},%
+                        \n3 = {atan2(\x3,\y3)}%
+                        in ($(\n2:#5)+(#2)$) arc (\n2:\n3:#5);
+            }
+
+% для работы с графиками            
+\pgfplotsset{compat=newest}
+
+% библиотеки для электричества
+\usetikzlibrary{circuits.ee,circuits.ee.IEC}
+
+% амперметр
+\tikzset{circuit declare symbol = ammeter}
+\tikzset{set ammeter graphic ={draw,generic circle IEC, minimum
+    size=5mm,info=center:A}} 
+
+% вольтметр
+\tikzset{circuit declare symbol = voltmeter}
+\tikzset{set ammeter graphic ={draw,generic circle IEC, minimum
+    size=5mm,info=center:V}} 

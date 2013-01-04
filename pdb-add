@@ -16,6 +16,5 @@ do
 done
 
 # и теперь считаем, сколько задач получилось
-n=$(grep task sel_id.tex | wc -l)
-n=$(($n-12))
+n=$(grep '\\task' sel_id.tex | wc -l)
 echo "Всего отобрано задач: $n"

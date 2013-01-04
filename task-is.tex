@@ -1,0 +1,51 @@
+%необходимые пакеты
+\usepackage{tabularx}
+\usepackage{makecell}
+
+% счётчик задач
+\newcounter{notask}
+\setcounter{notask}{1}
+
+% \task{УСЛОВИЕ ЗАДАЧИ}
+% задача без картинки
+% оформлена как таблица с двумя колонками
+% ширина первой колонки (номер столбца) фиксирована, 0.3cm
+% ширина второй колонки автоматически рассчитывается из ширины
+% страницы (с учётом всевозможных отступов)
+
+\newcommand{\task}[1]{
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \cline{1-2}
+    \makecell*[{{p{0.3cm}}}]{ \centering \arabic{notask}} &
+    \makecell*[{{p{\hsize}}}]{ #1 } \\
+    \cline{1-2}
+  \end{tabularx}
+
+  \vspace{-1pt}
+
+  \addtocounter{notask}{1}
+}
+
+
+% \taskpic[ШИРИНА КАРТИНКИ]{УСЛОВИЕ ЗАДАЧИ}{КАРТИНКА}
+% задача с картинкой
+% оформлена как таблица с тремя колонками
+% первый аргумент - необязательный, по умолчанию ширина картинки равна
+% 4cm, но можно выставить свою
+% ширина второй колонки (условие задачи) рассчитывается из ширины
+% страницы и ширины картинки
+
+\newcommand{\taskpic}[3][4cm]{
+  \begin{tabularx}{\textwidth}{|c|X|c|}
+    \cline{1-3}
+    \makecell*[{{p{0.3cm}}}]{ \centering \arabic{notask}} &
+    \makecell*[{{p{\hsize}}}]{ #2 } &
+    \makecell*[{{p{#1}}}]{ \centering #3} \\
+    \cline{1-3}
+  \end{tabularx}
+
+  \vspace{-1pt}
+
+  \addtocounter{notask}{1}
+}
+
