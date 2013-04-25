@@ -1,0 +1,18 @@
+\taskpic{ Три конденсатора ёмкостью $C$ и конденсатор ёмкостью $2C$
+  подключены к батарее с напряжением $U_0$ как показано на
+  рисунке. Какой заряд протечёт через батарею, если точки $A$ и $B$
+  замкнуть перемычкой?}
+{
+  \begin{tikzpicture}[circuit ee IEC,thick]
+    \node[contact={info=$A$}] (A) at (1.9,2) {};
+    \node[contact={info=$B$}] (B) at (1.9,1) {};
+    \node[contact] (left) at (0,1) {};
+    \node[contact] (right) at (3.8,1) {};
+    \draw (0,0) -- (left) -- (0,2) to[capacitor={info=$C$}] (A)
+    to[capacitor={info=$C$}] (3.8,2) to (right) -- (3.8,0);
+    \draw (left) to[capacitor={info'=$C$}] (B)
+    to[capacitor={info'=$2C$}] (right);
+    \draw (0,0) to[battery={info'=$U_0$}] (3.8,0);
+  \end{tikzpicture}
+  }
+% Квант, 1988 (Зильберман)
