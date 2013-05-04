@@ -6,15 +6,18 @@
   станут после этого силы реакции опор? Плотность свинца в $n$ раз
   больше плотности воды.  }{
   \begin{tikzpicture}
-    \fill[fill=blue!20] (0.5,0.5) rectangle (3.5,2);
-    \draw[very thick] (0.5,3) -- (0.5,0.5) -- (3.5,0.5) -- (3.5,3);
+    \fill[fill=blue!20,rounded corners=0.2cm] (0.5,0.5) rectangle
+    (3.5,1.2);
+    \fill[fill=blue!20] (0.5,1) rectangle (3.5,2);
+    \draw[line width=0.05cm,rounded corners=0.2cm] (0.5,3) -- (0.5,0.5) -- (3.5,0.5) -- (3.5,3);
     \draw (0.25,3) -- (3.75,3);
     \draw (2.75,3) -- ++(0,-0.5);
     \filldraw (2.75,2.5) circle (0.05cm) node [blue,right] {$M$};
     \draw[densely dashed] (2,3.25) -- (2,0.35);
     \draw[blue,<->] (2,2.75) -- (2.75,2.75) node[midway,below] {$l$};
-    \filldraw (0.7,0.5) -- ++(-0.1,-0.1) -- ++(0.2,0) -- cycle;
-    \filldraw (3.3,0.5) -- ++(-0.1,-0.1) -- ++(0.2,0) -- cycle;
-    \draw[blue,<->] (0.7,0.3) -- (3.3,0.3) node[below,midway] {$L$};
+    \filldraw (0.8,0.5) -- ++(-0.1,-0.2) -- ++(0.2,0) -- cycle;
+    \filldraw (3.2,0.5) -- ++(-0.1,-0.2) -- ++(0.2,0) -- cycle;
+    \draw[blue,<->] (0.8,0.2) -- (3.2,0.2) node[below,midway] {$L$};
   \end{tikzpicture}
 }
+% Квант, Ф1253, 1991-02
