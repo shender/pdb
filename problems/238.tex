@@ -1,0 +1,16 @@
+\taskpic{ Найдите скорость кубика в системе, изображённой на
+  рисунке. Нить нерастяжима. }
+{
+  \begin{tikzpicture}
+    \draw[thick] (1,2) circle (0.5cm);
+    \draw[thick] (2,0) circle (0.5cm);
+    \draw (1.5,0) -- (1.5,2);
+    \draw (2.5,0) -- (2.5,1.5);
+    \draw (0.5,2) -- (0.5,1);
+    \draw[fill=gray!30] (0.25,1) rectangle (0.75,0.5);
+    \draw[interface,thick] (2.25,1.5) -- (2.75,1.5);
+    \draw[blue,thick,->] (2,0) -- (2,-1) node[right] {$v_2$};
+    \draw[blue,thick,->] (1,2) -- (1,3) node[right] {$v_1$};
+  \end{tikzpicture}
+}  
+% Зильберман, Сурков, Задачи для физиков, №21
