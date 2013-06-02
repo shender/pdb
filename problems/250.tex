@@ -1,0 +1,15 @@
+\taskpic{ На два невесомых катка, имеющих разные радиусы, положили
+  тяжелую плиту. Она образует угол $\alpha$ с горизонтом. Найти
+  ускорение этой плиты при отсутствии проскальзывания. }
+{
+  \begin{tikzpicture}
+    \draw[thick,interface] (4,0) -- (0,0);
+    \draw[thick] (1,.85) circle (.85cm);
+    \draw[thick] (3,.65) circle (.65cm);
+    \draw[very thick, rotate around={-atan(0.2):(1,1.7)}] (0.5,1.7) rectangle
+    (3.5,1.9);
+    \draw[blue,dashed] (3,1.3) -- ++(-1.2,0);
+    \draw[blue] (2,1.4) node {\footnotesize{$\alpha$}};
+  \end{tikzpicture}
+}
+% Паршаков, 2.2.24

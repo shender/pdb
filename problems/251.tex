@@ -1,0 +1,17 @@
+\taskpic{ Однородный диск радиусом $R$, вращаясь вокруг своей оси с
+  угловой скоростью $\omega$, падает в вертикальном положении на
+  горизонтальную поверхность и отскакивает под углом $\theta$ к
+  вертикали, уже не вращаясь. Найти скорость диска сразу после
+  удара. }
+{
+  \begin{tikzpicture}
+    \draw[thick,interface] (3,0) -- (1,0);
+    \draw[very thick] (2,0.5) circle (0.5cm);
+    \draw[very thick,dashed] (2,2.5) circle (0.5cm);
+    \draw[blue,thick,->] (2,0.5) -- (3,1.25) node[right] {$v$};
+    \draw[dashed,blue] (2,2.5) -- (2,0.5);
+    \draw[blue] (2.13,0.77) node {$\theta$};
+    \draw[blue,->] (2.75,2.5) node[right] {$\omega$} arc (0:-60:0.5cm);
+  \end{tikzpicture}
+}
+% Паршаков, 2.2.18
