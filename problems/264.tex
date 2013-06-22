@@ -1,0 +1,29 @@
+\task{ Стержень вытаскивают из трубы, имеющей диаметр, несколько
+  больший диаметра стержня. В зазор между стержнем и трубой попадает
+  песчинка, имеющая форму параллелепипеда (отношение $a/b=0.1$). При
+  каком значении коэффициента трения между песчинкой и поверхностями
+  стержня и трубы стержень не удастся вытащить из трубы? Считать, что
+  коэффициент трения между трубой и стержнем пренебрежимо мал.  }
+\begin{center}
+  \parbox{6cm}{
+  \begin{tikzpicture}
+    \draw[thick,interface] (4,0) -- (0,0);
+    \draw[thick,interface] (0,2) -- (4,2);
+    \draw[very thick,fill=gray!20] (0.5,0.1) rectangle (4.5,1.9)
+    node[midway] {стержень};
+    \draw[thick,->] (4.6,1) -- (5.5,1);
+  \end{tikzpicture}}
+  \hspace{2cm}
+  \parbox{6cm}{
+  \begin{tikzpicture}
+    \draw[thick,interface] (0,2) -- (4,2);
+    \draw[very thick,fill=gray!20] (0,0) rectangle (4,1) node[midway]
+    {стержень}; 
+    \begin{scope}[rotate around={36:(1,1)}]
+      \draw[thick] (1,1) rectangle (2,1.5);
+      \draw[blue] (1.5,0.85) node {$a$};
+      \draw[blue] (2.15,1.25) node {$b$};
+    \end{scope}
+  \end{tikzpicture}}
+\end{center}
+% Квант, 1980, №11 (Асламазов)
