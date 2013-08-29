@@ -1,0 +1,29 @@
+
+\taskpic[9.5cm]{ Двенадцать резисторов спаяны в виде прямоугольного
+  параллелепипеда таким образом, что сопротивления каждых четырёх
+  параллельных ребёр одинаковы и равны, соответственно, $R_1$, $R_2$ и
+  $R_3$. Найдите сопротивление этой электрической цепи между точками A
+  и B. }
+{
+  \begin{tikzpicture}[circuit ee IEC]
+    \node[contact,info'={A}] (A) at (0,0) {};
+    \node[contact] (B) at (2,0) {};
+    \node[contact] (C) at (2,2) {};
+    \node[contact] (D) at (0,2) {};
+    \node[contact] (E) at (7,1.5) {};
+    \node[contact] (F) at (9,1.5) {};
+    \node[contact,info={B}] (G) at (9,3.5) {};
+    \node[contact] (H) at (7,3.5) {};
+    \draw (A) to[resistor={info'={$R_1$}}] (B)
+    to[resistor={info={$R_2$}}] (C) to[resistor={info'={$R_1$}}] (D)
+    to[resistor={info={$R_2$}}] (A);
+    \draw(A) to[resistor={info={$R_3$}}] (E);
+    \draw(B) to[resistor={info'={$R_3$}}] (F);
+    \draw(C) to[resistor={info'={$R_3$}}] (G);
+    \draw(D) to[resistor={info={$R_3$}}] (H);
+    \draw (E) to[resistor={info'={$R_1$}}] (F)
+    to[resistor={info={$R_2$}}] (G) to[resistor={info'={$R_1$}}] (H)
+    to[resistor={info={$R_2$}}] (E);
+  \end{tikzpicture}
+}
+% Москва, Город-2006, 10 класс

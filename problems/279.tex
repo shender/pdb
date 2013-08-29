@@ -1,0 +1,22 @@
+\taskpic{ По внутренней поверхности гладкой конической воронки,
+  стоящей вертикально, скользят с постоянными по величине скоростями
+  на высотах $h_1$ и $h_2$ от вершины конуса две маленькие
+  шайбы. Найдите отношение квадратов их периодов обращения вокруг оси
+  конуса. } {
+  \begin{tikzpicture}
+    \draw[thick,interface] (3,0) -- (0,0);
+    \draw[thick] (0.5,2.5) -- (1.5,0) -- (2.5,2.5);
+    \draw[thick] (1.5,2.5) ellipse (1cm and 0.2cm);
+    \draw[blue,dashed] (2.2,0.9) -- (1.2,0.9);
+    \draw[blue,dashed] (0.6,1.6) -- (0.9,1.6);
+    \draw[blue,<->] (2.2,0) -- (2.2,0.9) node[midway,right] {$h_1$};
+    \draw[dashed] (1.5,0.9) ellipse (0.37cm and 0.07cm);
+    \draw[dashed] (1.5,1.6) ellipse (0.65cm and 0.07cm);
+    \draw[fill=black,rotate around={-atan(2.5):(1.5,0)}] (-0.3,0)
+    rectangle ++(0.2,0.1);
+    \draw[fill=black,rotate around={-atan(2.5):(1.5,0)}] (0.5,0)
+    rectangle ++(0.2,0.1);
+    \draw[blue,<->] (0.6,0) -- (0.6,1.6) node[midway,left] {$h_2$};
+  \end{tikzpicture}
+}
+% Москва, Город-1994, 9 класс

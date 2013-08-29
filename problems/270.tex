@@ -1,0 +1,22 @@
+\taskpic[5cm]{На графике 1 представлена зависимость силы сопротивления,
+  действующей на парус, от его скорости относительно воздуха. На
+  графике 2 представлена зависимость силы сопротивления, действующей
+  на лодку, от ее скорости относительно воды. Какую скорость разовьет
+  в стоячей воде лодка с закрепленным на ней парусом при скорости
+  ветра $u = 5$~м/с? Направление движения лодки совпадает с
+  направлением ветра.}
+{
+  \begin{tikzpicture}
+    \begin{axis}[grid=both,xmin=0,xmax=5.5,ymin=0,ymax=5.5,xlabel={$v$,
+      м/с},ylabel={$F$, кН},xtick={0,1,2,3,4,5},ytick={1,2,3,4,5},x=0.8cm,y=0.7cm,every axis y label/.style={at={(ticklabel cs:0.9)},anchor=north
+  west,xshift=0.4cm}, every axis x label/.style={at={(ticklabel cs:0.95)},anchor=south
+  east,yshift=0.5cm}]
+      \addplot[smooth,domain=0:5,mark=none,very thick,blue] plot coordinates
+      {(0,0) (1,0.3) (2,0.7) (3,1.3) (4,2.5) (5.25,4.25)} node[right] {1};
+      \addplot[smooth,domain=0:5,mark=none,very thick,red] plot coordinates
+      {(0,0) (1,0.15) (2,0.4) (3,1.1) (4,3.1) (5,5.1) (5.25,5.3)}
+      node[near end,above=0.4cm] {2};
+    \end{axis}
+  \end{tikzpicture}
+}
+% Район-2007, 9 класс
