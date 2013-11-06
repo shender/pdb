@@ -9,15 +9,12 @@
     \coordinate (c) at (3,2.5);
     \coordinate (d) at (3,0);
     \coordinate (e) at (0,0); 
-
     \marktheangle[blue]{b}{c}{d}{0.4cm}{$\alpha_2$};
     \marktheangle[blue]{b}{e}{a}{0.4cm}{$\alpha_1$};
-
     \draw[line width=0.6mm] (a) -- (b) node[blue,midway,below left]
     {$m_1$};
     \draw[line width=0.8mm] (b) -- (c) node[blue,midway,above left]
     {$m_2$};
-
     \draw[thick,interface] (3,3) -- (3,0);
     \draw[thick,interface] (3,0) -- (0,0);
     \draw[thick,interface] (0,0) -- (0,3);
