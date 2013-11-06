@@ -1,0 +1,34 @@
+#!/bin/bash
+# этот скрипт создаёт pdf со всеми задачами
+# (c) Дима Смирнов
+
+# имя файла с отобранными задачами
+FILE=all
+
+#pdb-init
+rm -f sel_tags*
+rm -f *.aux *.log *.out *.pdf *.synctex.gz
+rm -f $FILE.tex
+
+# создание файла с готовым header'ом
+cat "header.tex" > $FILE.tex
+
+# задачи по очереди добавляются в FILE
+n=$(ls problems/*.tex -1A|wc -l)
+for (( index=1; index<=n; index++ ))
+do
+	# копируем тело задачи в общий файл
+        cat "problems/$index.tex" >> $FILE.tex
+	echo -e "\n" >> $FILE.tex
+	
+	# пишем теги под каждой задачей
+	echo -e "\\\vspace{0.1cm} Ключевые слова: \\\textbf{ $(sed -n "$index"p pdb) } \\\vspace{0.1cm}" >> $FILE.tex
+	echo -e "\n" >> $FILE.tex
+done
+
+echo "Всего задач в базе: $n"
+
+#компилируем
+echo "\end{document}" >> $FILE.tex
+pdflatex -synctex=1 $FILE.tex #1>/dev/null
+#xdg-open $FILE.pdf 2>/dev/null &
