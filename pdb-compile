@@ -6,7 +6,7 @@ FILE=sel_id
 echo "\end{document}" >> $FILE.tex
 
 pdflatex -synctex=1 $FILE.tex
-xdg-open $FILE.pdf &
+./pdb-open $FILE.pdf &
 
 if [ -n "$1" ]
     then

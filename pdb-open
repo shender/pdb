@@ -2,7 +2,7 @@
 resp=`uname -s`
 if [ $resp == "Darwin" ]; then
   cmd="open"
-	echo "Seems like you're using OS X, using open instead of xdg-open"
+	echo $'\nSeems like you are using OS X, using open instead of xdg-open\n'
 else
 	cmd="xdg-open"
 fi
