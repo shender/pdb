@@ -1,0 +1,9 @@
+#!/bin/bash
+resp=`uname -s`
+if [ $resp == "Darwin" ]; then
+  cmd="open"
+	echo "Seems like you're using OS X, using open instead of xdg-open"
+else
+	cmd="xdg-open"
+fi
+$cmd $@
