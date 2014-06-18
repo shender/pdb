@@ -1,9 +1,13 @@
 #!/bin/bash
+
+#что у нас за система?
 resp=`uname -s`
+
 if [ $resp == "Darwin" ]; then
+	#да это ж макось
   cmd="open"
-	echo $'\nSeems like you are using OS X, using open instead of xdg-open\n'
 else
 	cmd="xdg-open"
 fi
-$cmd $@
+
+$cmd $@ &
