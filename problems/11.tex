@@ -1,41 +1,46 @@
-\task{В схеме, изображенной на рисунке, имеются четыре
-  диода. Известно, что при любом напряжении, подведенном к выводам
-  схемы, ток через амперметр не течет. ВАХ трех диодов $D_1$, $D_2$ и
-  $D_3$ известны (см. график). Постройте ВАХ четвертого диода.  }
+\task{
+    В схеме, изображенной на рисунке, имеются четыре диода. Известно, что при любом напряжении, подведенном к выводам схемы,
+    ток через амперметр не течет. ВАХ трех диодов $D_1$, $D_2$ и $D_3$ известны (см. график). Постройте ВАХ четвертого диода.
+}
 
 \begin{center}
-  \parbox[c]{6cm}{
- \begin{tikzpicture}[circuit ee IEC,thick,circuit symbol unit=0.4cm]
-   \node[contact,circuit symbol unit=0.3cm] (up) at (2,2) {};
-   \node[contact,circuit symbol unit=0.3cm] (bottom) at (2,0) {};
-   \draw (0,2) to [diode={info=$D_1$}] (up) to[ammeter] (bottom)
-   to[diode={info=$D_4$}] (4,0) to (4,2);
-   \draw (0,2) -- (0,0) to[diode={info=$D_3$}] (2,0) (2,2) to
-   [diode={info=$D_2$}] (4,2);
-   \draw[o-] (-1,1) -- (0,1);
-   \draw[-o] (4,1) -- (5,1);
- \end{tikzpicture}}
- \hspace{1cm}
- \parbox[c]{7cm}{
- \begin{tikzpicture}
-   \begin{axis}[
-     height=6cm, width=6cm,
-     grid=both,
-     xlabel={$U$, В},
-     ylabel={$I$, А},
-     minor tick num=3,
-     axis x line=bottom,
-     axis y line=left,
-     ytick={0,7.5,...,30},
-     yticklabels={,0.1,0.2,0.3,0.4},
-     xmin=0,ymin=0,ymax=35,xmax=4.5,samples=50]
-     \addplot[red,very thick] {6*x^3};
-     \node[fill=white,draw=red] at (axis cs:0.6,17) {$D_1$};
-     \addplot[green,very thick] {0.9*x^3};
-     \node [fill=white,draw=green] at (axis cs:2,17) {$D_2$};
-     \addplot[blue,very thick] {0.45*x^3};
-     \node [fill=white,draw=blue] at (axis cs:4,17) {$D_3$};
-   \end{axis}
- \end{tikzpicture}}
+	\parbox[c]{6cm}{
+        \begin{tikzpicture}[circuit ee IEC, thick, circuit symbol unit = 0.4cm]
+            \node[contact, circuit symbol unit = 0.3cm] (up) at (2, 2) {};
+            \node[contact, circuit symbol unit = 0.3cm] (bottom) at (2, 0) {};
+            \draw (0, 2) to [diode = {info = $D_1$}] (up) to[ammeter] (bottom) to[diode = {info = $D_4$}] (4, 0) to (4, 2);
+            \draw (0, 2) -- (0, 0) to[diode = {info = $D_3$}] (2, 0) (2, 2) to [diode = {info = $D_2$}] (4, 2);
+            \draw[o-] (-1, 1) -- (0, 1);
+            \draw[-o] (4, 1) -- (5, 1);
+        \end{tikzpicture}
+    }
+    \hspace{1cm}
+    \parbox[c]{7cm}{
+        \begin{tikzpicture}
+            \begin{axis}[
+                height = 6cm,
+                width = 6cm,
+                grid = both,
+                xlabel = {$U$, В},
+                ylabel = {$I$, А},
+                minor tick num = 3,
+                axis x line = bottom,
+                axis y line = left,
+                ytick = {0, 7.5, ..., 30},
+                yticklabels = {, 0.1, 0.2, 0.3, 0.4},
+                xmin = 0,
+                ymin = 0,
+                ymax = 35,
+                xmax = 4.5,
+                samples = 50]
+                \addplot[red, very thick] {6*x^3};
+                \node[fill = white, draw = red] at (axis cs:0.6, 17) {$D_1$};
+                \addplot[green, very thick] {0.9*x^3};
+                \node[fill = white, draw = green] at (axis cs:2, 17) {$D_2$};
+                \addplot[blue, very thick] {0.45*x^3};
+                \node[fill = white, draw = blue] at (axis cs:4, 17) {$D_3$};
+            \end{axis}
+        \end{tikzpicture}
+    }
 \end{center}
 % Туймаада, 3.7
