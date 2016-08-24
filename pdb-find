@@ -17,7 +17,7 @@ pdb-pdf-create () {
 	echo "\setcounter{notask}{${id[$index]}}" >> $FILE.tex
 
 	# копируем тело задачи в общий файл
-	cat "problems/${id[$index]}.tex" >> $FILE.tex
+	echo "\input{problems/${id[$index]}.tex}" >> $FILE.tex
 	echo -e "\n" >> $FILE.tex
 	
 	# пишем теги под каждой задачей
