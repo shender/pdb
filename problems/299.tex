@@ -1,27 +1,28 @@
-\taskpic{Таракан ползет вдоль стены школьной столовой длиной $30$ м, причем скорость таракана все время меняется. Известен график зависимости величины обратной скорости таракана $v$ от его координаты $x$. Определите по этому графику время, за которое таракан проползет вдоль всей стены.}
-{
-\begin{tikzpicture}
-  \draw[help lines,step=0.5] (0,0) grid (3.15,3.15);  
-  \draw[->,thick] (0,0) -- (0,3.3) node[right] {\tiny{$1/v$, с$\cdot$м$^{-1}$}};
-  \draw[->,thick] (0,0) -- (3.5,0) node[above] {\tiny{$S$, м}};;
-  \draw[very thick,red] (0,3) to[out=-60,in=180] (1.75,1) to
-  [out=0,in=-150] (3,1.4);
-%  \draw (0,-0.3) node {\tiny{$0$}};
-  \draw (0,0.1) -- ++(0,-0.2) node[below] {\tiny{0}};
-  \draw (0.5,0.1) -- ++(0,-0.2) node[below] {\tiny{5}};
-  \draw (1,0.1) -- ++(0,-0.2) node[below] {\tiny{10}};
-  \draw (1.5,0.1) -- ++(0,-0.2) node[below] {\tiny{15}};
-  \draw (2,0.1) -- ++(0,-0.2) node[below] {\tiny{20}};
-  \draw (2.5,0.1) -- ++(0,-0.2) node[below] {\tiny{25}};
-  \draw (3,0.1) -- ++(0,-0.2) node[below] {\tiny{30}};
-  \draw(0.1,0) -- ++(-0.2,0) node[left=-3] {\tiny{0}};
-  \draw(0.1,0.5) -- ++(-0.2,0) node[left=-3] {\tiny{5}};
-  \draw(0.1,1) -- ++(-0.2,0) node[left=-3] {\tiny{10}};
-  \draw(0.1,1.5) -- ++(-0.2,0) node[left=-3] {\tiny{15}};
-  \draw(0.1,2) -- ++(-0.2,0) node[left=-3] {\tiny{20}};
-  \draw(0.1,2.5) -- ++(-0.2,0) node[left=-3] {\tiny{25}};
-  \draw(0.1,3) -- ++(-0.2,0) node[left=-3] {\tiny{30}};
-\end{tikzpicture}
+\taskpic{
+    Таракан ползет вдоль стены школьной столовой длиной $30$ м, причем скорость таракана все время меняется. Известен график
+    зависимости величины обратной скорости таракана $v$ от его координаты $x$. Определите по этому графику время, за которое
+    таракан проползет вдоль всей стены.
+}{
+    \begin{tikzpicture}
+        \draw[help lines, step = 0.5] (0, 0) grid (3.15, 3.15);
+        \draw[->, thick] (0, 0) -- (0, 3.3) node[right] {\tiny{$1 / v$, с$\cdot$м$^{-1}$}};
+        \draw[->, thick] (0, 0) -- (3.5, 0) node[above] {\tiny{$S$, м}};
+        \draw[very thick, red] (0, 3) to[out = -60, in = 180] (1.75, 1) to[out = 0, in = -150] (3, 1.4);
+        \draw (0, 0.1) -- ++(0, -0.2) node[below] {\tiny{0}};
+        \draw (0.5, 0.1) -- ++(0, -0.2) node[below] {\tiny{5}};
+        \draw (1, 0.1) -- ++(0, -0.2) node[below] {\tiny{10}};
+        \draw (1.5, 0.1) -- ++(0, -0.2) node[below] {\tiny{15}};
+        \draw (2, 0.1) -- ++(0, -0.2) node[below] {\tiny{20}};
+        \draw (2.5, 0.1) -- ++(0, -0.2) node[below] {\tiny{25}};
+        \draw (3, 0.1) -- ++(0, -0.2) node[below] {\tiny{30}};
+        \draw(0.1, 0) -- ++(-0.2, 0) node[left = -3pt] {\tiny{0}};
+        \draw(0.1, 0.5) -- ++(-0.2, 0) node[left = -3pt] {\tiny{5}};
+        \draw(0.1, 1) -- ++(-0.2, 0) node[left = -3pt] {\tiny{10}};
+        \draw(0.1, 1.5) -- ++(-0.2, 0) node[left = -3pt] {\tiny{15}};
+        \draw(0.1, 2) -- ++(-0.2, 0) node[left = -3pt] {\tiny{20}};
+        \draw(0.1, 2.5) -- ++(-0.2, 0) node[left = -3pt] {\tiny{25}};
+        \draw(0.1, 3) -- ++(-0.2, 0) node[left = -3pt] {\tiny{30}};
+    \end{tikzpicture}
 }
 
 % Богословский, с. 38
