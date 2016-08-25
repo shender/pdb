@@ -1,3 +1,4 @@
+
 \taskpic[3cm]{Пластмассовый кубик со стороной 10~см привязан к невесомой
   нерастяжимой нити, которая намотана на катушку. Разматывая катушку,
   кубик погружают в бассейн с жидкостью. Плотность жидкости зависит от
@@ -17,4 +18,14 @@
     \draw[fill=white] (1.25,1.1) rectangle (1.75,0.6);
   \end{tikzpicture}
 }
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[grid=both, xmin=0, ymin=1150, ymax=1450,
+      y=0.015cm, x=0.25cm, xlabel={Глубина, см},ylabel={Плотность,
+        $\mbox{кг/м}^3$},ytick={1200,1250,...,1450}]
+      \addplot[mark=none,very thick,blue,line width=2pt,domain=0:45] {1200+5*x};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
 % Город-2004, 7 класс
