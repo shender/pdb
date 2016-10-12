@@ -1,0 +1,65 @@
+\task{ Экспериментатор Глюк на большом лабораторном столе проводил
+  испытания модели вездехода. Координатную ось $X$ он направил вдоль
+  длинного края стола. Зависимости координаты $x(t)$ и пройденного
+  пути $s(t)$ от времени приведены на графиках. Опишите характер
+  движения модели вездехода. С какой максимальной скоростью двигался
+  вездеход? На каком расстоянии друг от друга находятся начальные и
+  конечные точки его движения? }
+\begin{figure}[h]
+  \centering
+  \subfloat[][]{
+    \begin{tikzpicture}[/pgfplots/axis labels at tip/.style={ xlabel
+        style={at={(current axis.right of origin)}, yshift=2 ex,
+          anchor=east,fill=white}, ylabel style={at={(current
+            axis.above origin)}, yshift=1.5ex, anchor=center}}]
+    \begin{axis}[
+      width=8cm,
+      xmin=0,xmax=130,ymin=20,ymax=75,
+      axis x line=bottom,
+      axis y line=middle,
+      axis labels at tip,
+      xlabel={$t$, с},
+      ylabel={$x$, см},
+      xtick={0,10,...,120},
+      ytick={20,30,...,70},
+      xticklabels={0,10,20,...,120},
+      yticklabels={20,30,...,70},
+      tick label style={font=\scriptsize},
+      label style={font=\small},
+      grid=both
+      ]
+      \addplot[very thick,red,mark=none] coordinates {(0,30) (40,70)
+        (60,70) (120,50)};
+    \end{axis}
+  \end{tikzpicture}}%
+\hspace{1cm}
+  \subfloat[][]{
+    \begin{tikzpicture}[/pgfplots/axis labels at tip/.style={ xlabel
+        style={at={(current axis.right of origin)}, yshift=2 ex,
+          anchor=east,fill=white}, ylabel style={at={(current
+            axis.above origin)}, yshift=1.5ex, anchor=center}}]
+    \begin{axis}[
+      width=8cm,
+      xmin=0,xmax=130,ymin=0,ymax=115,
+      axis x line=bottom,
+      axis y line=middle,
+      axis labels at tip,
+      xlabel={$t$, с},
+      ylabel={$s$, см},
+      xtick={0,10,...,120},
+      ytick={0,20,...,100},
+      xticklabels={0,10,20,...,120},
+      yticklabels={0,20,...,100},
+      tick label style={font=\scriptsize},
+      label style={font=\small},
+      grid=both
+      ]
+      \addplot[very thick,red,mark=none] coordinates {(0,0) (40,40)
+        (60,80) (120,100)};
+    \end{axis}
+  \end{tikzpicture} 
+  }
+
+\end{figure}
+% Максвелл-2016, 8 класс
+% ccpe-2016-2017-8
