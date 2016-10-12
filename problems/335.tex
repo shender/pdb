@@ -1,0 +1,45 @@
+
+\task{ Колонна машин движется по дороге, строго соблюдая определённый
+  скоростной режим --- зависимость скорости машины от её положения $x$
+  на дороге представлена на графике сплошной линией. Известно, что
+  машины начинали своё движение с интервалом в $\tau=10$ с. В
+  некоторый момент всем машинам одновременно поступило сообщение об
+  ухудшении погодных условий, в соответствии с которым они должны
+  изменить свой скоростной режим на другой --- изображённый
+  прерывистой линией. Какой максимальный временной интервал будет
+  наблюдаться между машинами, приходящими в конечный пункт? }
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[/pgfplots/axis labels at tip/.style={ xlabel
+      style={at={(current axis.right of origin)}, yshift=2 ex,
+        anchor=east,fill=white}, ylabel style={at={(current axis.above
+          origin)}, yshift=1.5ex, anchor=center}}]
+    \begin{axis}[
+      width=8cm,
+      xmin=0,xmax=6,ymin=0,ymax=80,
+      axis x line=bottom,
+      axis y line=middle,
+      axis labels at tip,
+      xlabel={$x$, км},
+      ylabel={$v$, км/ч},
+      minor xtick={0.25,0.5,0.75,...,6},
+      minor ytick={5,10,15,...,80},
+      xtick={0,1,2,...,6},
+      ytick={0,20,40,60},
+      xticklabels={0,1,2,...,6},
+      yticklabels={0,20,40,60},
+      tick label style={font=\small},
+      label style={font=\small},
+      grid=both
+      ]
+      \addplot[very thick,red,mark=none] coordinates { (0,55)
+        (0.75,55) (0.75,65) (1.75,65) (1.75,45) (3,45) (3,60) (4,60)
+        (4,55) (5,55) (5,70) (6,70) };
+      \addplot[very thick,dashed,blue,mark=none] coordinates { (0,40) (0.75,40)
+        (0.75,45) (1.75,45) (1.75,35) (3,35) (3,40) (4,40) (4,50) (6,50)  };
+    \end{axis}
+  \end{tikzpicture}%
+\end{figure}
+% Город-2007, 8 класс
+% ccpe-2016-2017-8
