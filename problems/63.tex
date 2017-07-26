@@ -1,25 +1,22 @@
 % Квант, 1985-2
-\taskpic{Пара одинаковых грузиков $A$ и $B$, связанных невесомой нитью
-  длиной $l$, начинает соскальзывать с гладкого стола высотой $l$,
-  причём в начальный момент $B$ находится на высоте $h=2l/3$ от пола
-  (см. рисунок). Достигнув пола, грузик $B$ прилипает к нему; грузик
-  $A$ в этот момент слетает со стола. На какой высоте над уровнем пола
-  будет грузик $A$, когда нить вновь окажется
-  натянутой?}{
-  \begin{tikzpicture}
-    \draw[interface,thick] (4,0) -- ++(-3,0);
-    \draw[very thick] (1.5,0) -- ++(0,2);
-    \draw[very thick] (0.75,2) -- ++ (1.5,0);
-    \filldraw (1.6,2.08) circle (0.07cm) node [blue,above] {$A$};
-    \draw (1.6,2.07) -- (2.25,2.02) -- ++(0,-0.7);
-    \filldraw (2.25,1.32) circle (0.07cm) node[blue,right] {$B$};
-    \draw[densely dashed] (2.25,0.08) -- ++(40:1.4cm);
-    \draw[densely dashed,fill=gray!15] (2.25,0.08) circle (0.07cm);
-    \draw[densely dashed,fill=gray!15] (2.25,0.08) ++(40:1.4cm) circle
-    (0.07cm);
-    \draw[blue,<->] (2.05,0) -- ++(0,1.35) node[left,midway] {$h$};
-    \draw[blue,<->] (1.2,0) -- ++ (0,2) node[left,midway] {$l$};
-    \draw[blue,<->] (2.55,0.1) ++(40:1.4cm) -- ++(0,-0.98)
-    node[right,midway] {?};
-  \end{tikzpicture}
+\taskpic{
+	Пара одинаковых грузиков $A$ и $B$, связанных невесомой нитью длиной $\ell$, начинает соскальзывать с
+    гладкого стола высотой $\ell$, причём в начальный момент $B$ находится на высоте $h = 2 \ell / 3$ от
+    пола (см. рисунок). Достигнув пола, грузик $B$ прилипает к нему; грузик $A$ в этот момент слетает со
+    стола. На какой высоте над уровнем пола будет грузик $A$, когда нить вновь окажется натянутой?
+}{
+	\begin{tikzpicture}
+    	\draw[interface, thick] (4, 0) -- ++(-3, 0);
+        \draw[very thick] (1.5, 0) -- ++(0, 2);
+        \draw[very thick] (0.75, 2) -- ++(1.5, 0);
+        \filldraw (1.6, 2.08) circle (0.07cm) node [blue, above] {$A$};
+        \draw (1.6, 2.07) -- (2.25, 2.02) -- ++(0, -0.7);
+        \filldraw (2.25, 1.32) circle (0.07cm) node[blue, right] {$B$};
+        \draw[densely dashed] (2.25, 0.08) -- ++(40:1.4cm);
+        \draw[densely dashed, fill = gray!15] (2.25, 0.08) circle (0.07cm);
+        \draw[densely dashed, fill = gray!15] (2.25, 0.08) ++(40:1.4cm) circle (0.07cm);
+        \draw[blue, <->] (2.05, 0) -- ++(0, 1.35) node[left, midway] {$h$};
+        \draw[blue, <->] (1.2, 0) -- ++ (0, 2) node[left, midway] {$\ell$};
+        \draw[blue, <->] (2.55, 0.1) ++(40:1.4cm) -- ++(0, -0.98) node[right, midway] {?};
+    \end{tikzpicture}
 }

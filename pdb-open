@@ -7,7 +7,7 @@ if [ $resp == "Darwin" ]; then
 	#да это ж макось
   cmd="open"
 else
-	cmd="xdg-open"
+	cmd="zathura"
 fi
 
 $cmd $@ &
