@@ -1,17 +1,16 @@
-
-\taskpic{ Имеются две металлические концентрические сферы радиусами
-  $r$ и $R$. Внутренняя сфера заземлена с помощью длинного провода,
-  который выходит через небольшое отверстие во внешней сфере. Внешняя
-  сфера сообщили заряд $Q$. Найдите её потенциал. }
-{
-  \begin{tikzpicture}
-    \draw[very thick] (2,2) circle (0.5cm);
-    \draw[very thick] (2,2) circle (1cm);
-    \draw[fill=white,draw=white] (2,1) circle (0.1cm);
-    \draw[thick] (2,1.5) -- (2,0.5);
-    \draw[interface] (2.5,0.5) -- (1.5,0.5);
-    \draw[thick,blue,->] (2,2) -- ++(15:1cm) node[right] {$R$};
-    \draw[thick,blue,->] (2,2) node[left] {$r$} -- ++(110:0.5cm);
+\taskpic{
+	Имеются две металлические концентрические сферы радиусами $r$ и $R$. Внутренняя сфера заземлена с
+    помощью длинного провода, который выходит через небольшое отверстие во внешней сфере. Внешняя сфера
+    сообщили заряд $Q$. Найдите её потенциал.
+}{
+    \begin{tikzpicture}
+	    \draw[thick] (2, 2) circle (0.5cm);
+        \draw[thick] (2, 2) circle (1cm);
+        \draw[fill = white, draw = white] (2, 1) circle (0.1cm);
+        \draw[thick] (2, 1.5) -- (2, 0.5);
+        \draw[very thick, interface] (2.5, 0.5) -- (1.5, 0.5);
+        \draw[blue, ->] (2, 2) -- ++(15:1cm) node[right] {$R$};
+        \draw[blue, ->] (2, 2) node[left] {$r$} -- ++(110:0.5cm);
   \end{tikzpicture}
 }
 % Межнар, 1970 год
