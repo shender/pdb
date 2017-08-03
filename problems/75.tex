@@ -1,23 +1,22 @@
-\taskpic{ Конденсаторы $C$, $2C$ и $3C$ соединены между собой, как
-  показано на рисунке. В начальный момент конденсатор $2C$ заряжен до
-  напряжения $U$, остальные конденсаторы не заряжены. Какое количество
-  тепла выделится за большое время на резисторе $R$?  }
-{
-  \begin{tikzpicture}[circuit ee IEC]
-    \node[contact] (A) at (0,0) {};
-    \node[contact] (B) at (1.5,0) {};
-    \node[contact] (C) at (3,0) {};
-    \node[contact] (D) at (1.5,-1.5) {};
-    % средние конденсаторы 
-    \draw (A) to[capacitor={info=$C$}] (B) to[capacitor={info=$3C$}]
-    (C);
-    % нижние резисторы 
-    \draw (A) to[resistor={info={$3R$}}] (0,-1.5) -- (D) -- (3,-1.5)
-    to[resistor={info'={$R$}}] (C); 
-    % нижний конденсатор
-    \draw (B) to[capacitor={info={$2C$}}] (D);
-    % верхний резистор
-    \draw (A) to (0,1.5) to[resistor={info'={$2R$}}] (3,1.5) -- (C); 
-  \end{tikzpicture}
+\taskpic{
+	Конденсаторы $C$, $2C$ и $3C$ соединены между собой, как показано на рисунке. В начальный момент
+    конденсатор $2C$ заряжен до напряжения $U$, остальные конденсаторы не заряжены. Какое количество
+    тепла выделится за большое время на резисторе $R$?
+}{
+	\begin{tikzpicture}[circuit ee IEC]
+    	\node[contact] (A) at (0, 0) {};
+        \node[contact] (B) at (1.5, 0) {};
+        \node[contact] (C) at (3, 0) {};
+        \node[contact] (D) at (1.5, -1.5) {};
+        % средние конденсаторы
+        \draw (A) to[capacitor = {info = $C$}] (B) to[capacitor = {info = $3C$}] (C);
+        % нижние резисторы
+        \draw (A) to[resistor = {info = {$3R$}}] (0, -1.5) -- (D) -- (3, -1.5)
+        	to[resistor = {info' = {$R$}}] (C);
+        % нижний конденсатор
+        \draw (B) to[capacitor = {info = {$2C$}}] (D);
+        % верхний резистор
+        \draw (A) to (0, 1.5) to[resistor = {info' = {$2R$}}] (3, 1.5) -- (C);
+    \end{tikzpicture}
 }
 % Сорос, 2000
