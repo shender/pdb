@@ -9,5 +9,5 @@ rm -f sel_id.tex
 cat "header.tex" > sel_id.tex
 
 # создание файла с тегами
-rm tags
+rm tags 2> /dev/null
 cut -f 2- -d ' ' pdb | tr ' ' '\n' | sort | uniq > tags
