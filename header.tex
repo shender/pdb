@@ -11,6 +11,20 @@
 \tolerance = 1000
 \emergencystretch = 0.74cm
 
+\tikzset{
+    interface/.style = {
+        postaction = {
+            draw,
+            decorate,
+            decoration = {
+                border,
+                angle = 45,
+                amplitude = 0.2cm,
+                segment length = 1mm
+            }
+        }
+    }
+}
 
 
 \pagestyle{empty}
