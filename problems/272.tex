@@ -1,12 +1,16 @@
-\taskpic{ К вертикальной плоскости прислонён кубик, удерживаемый за
-  ребро верёвкой. При каких значениях угла $\alpha$ кубик находится в
-  равновесии, если коэффициент трения кубика о плоскость равен $\mu$? }
-{
-  \begin{tikzpicture}
-    \draw[thick] (0,2.75) -- (1.5,2);
-    \draw[very thick,fill=gray!20] (0,0.5) rectangle (1.5,2);
-    \draw[thick,interface] (0,0) -- (0,3);
-    \draw (0.8,2.15) node[blue] {$\alpha$}; 
-  \end{tikzpicture}
+\taskpic{
+    К вертикальной плоскости прислонён кубик, удерживаемый за ребро верёвкой. При каких значениях угла
+    $\alpha$ кубик находится в равновесии, если коэффициент трения кубика о плоскость равен $\mu$?
+}{
+    \begin{tikzpicture}
+        \coordinate (o1) at (0, 2.75);
+        \coordinate (o2) at (1.5, 2);
+        \coordinate (o3) at (0, 2);
+        \pic[pic text = {\small $\alpha$}, draw = blue, angle eccentricity = 1.5, angle radius = 0.6cm]
+            {angle = o1--o2--o3};
+        \draw (o1) -- (o2);
+        \draw[thick, fill = gray!20] (0, 0.5) rectangle (o2);
+        \draw[platform] (-0.03, 0) -- ++(0, 3);
+    \end{tikzpicture}
 }
 % Кондратьев, Уздин, 3.105

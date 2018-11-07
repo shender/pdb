@@ -1,23 +1,28 @@
-\taskpic{ Два однородных стержня, массы которых $m_1$ и $m_2$,
-  опираются на гладкие вертикальные стенки и гладкую горизонтальную
-  поверхность. Найдите соотношение между углами $\alpha_1$ и
-  $\alpha_2$ при равновесии системы.   }
-{
-  \begin{tikzpicture}
-    \coordinate (a) at (0,2.5);
-    \coordinate (b) at (2.1,0);
-    \coordinate (c) at (3,2.5);
-    \coordinate (d) at (3,0);
-    \coordinate (e) at (0,0); 
-    \marktheangle[blue]{b}{c}{d}{0.4cm}{$\alpha_2$};
-    \marktheangle[blue]{b}{e}{a}{0.4cm}{$\alpha_1$};
-    \draw[line width=0.6mm] (a) -- (b) node[blue,midway,below left]
-    {$m_1$};
-    \draw[line width=0.8mm] (b) -- (c) node[blue,midway,above left]
-    {$m_2$};
-    \draw[thick,interface] (3,3) -- (3,0);
-    \draw[thick,interface] (3,0) -- (0,0);
-    \draw[thick,interface] (0,0) -- (0,3);
-  \end{tikzpicture}
+\taskpic{
+    Два однородных стержня, массы которых $m_1$ и $m_2$, опираются на гладкие вертикальные стенки и
+    гладкую горизонтальную поверхность. Найдите соотношение между углами $\alpha_1$ и $\alpha_2$, если
+    система находится в равновесии.
+}{
+    \begin{tikzpicture}
+        \def\a{40}
+        \def\b{130}
+        \def\l{2}
+        \pgfmathsetmacro{\xa}{1.2 * \l * cos(\a)}
+        \pgfmathsetmacro{\xb}{\l * cos(180 - \b)}
+        \fill[pattern = north west lines] (-\xb, 2.15) -- (-\xb, 0) -- (\xa, 0) -- (\xa, 2.15) --
+            (\xa + 0.2, 2.15) -- (\xa + 0.2, -0.2) -- (-\xb - 0.2, -0.2) -- (-\xb - 0.2, 2.15) -- cycle;
+        \draw[very thick] (-\xb, 2.15) -- (-\xb, 0) -- (\xa, 0) -- (\xa, 2.15);
+        \coordinate (o) at (0, 0);
+        \coordinate (a) at (\a:1.2 * \l);
+        \coordinate (b) at (\b:\l);
+        \coordinate (c) at (-\xb, 0);
+        \coordinate (d) at (\xa, 0);
+        \draw[thick] (a) -- (o) node[midway, below right] {\footnotesize $m_2$} -- (b)
+            node[midway, above right] {\footnotesize $m_1$};
+        \pic[pic text = \footnotesize $\alpha_1$, draw = blue, angle eccentricity = 1.6,
+            angle radius = 0.5cm] {angle = b--o--c};
+        \pic[pic text = \footnotesize $\alpha_2$, draw = blue, angle eccentricity = 1.6,
+            angle radius = 0.5cm] {angle = d--o--a};
+    \end{tikzpicture}
 }
 % Квант, 1980, №9
